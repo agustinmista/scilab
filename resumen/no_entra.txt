@@ -1,0 +1,12 @@
+1) Sucesiones y Series: demostraciones de los criterios de convergencia.
+
+2) Métodos de Jacobi y de Gauss-Seidel: demostraciones de convergencia
+para matrices diagonalemente dominantes.
+
+3) Demostración del método de la potencia
+
+4) Interpolación:
+  - demostración de existencia y unicidad del polinomio interpolante.
+  - demostración de la fórmula de interpolación por diferencias divididas de
+    Newton.
+  - demostración de la fórmula del error de la interpolación polinomial.
