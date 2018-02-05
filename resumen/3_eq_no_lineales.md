@@ -18,8 +18,8 @@ transformación de $x_k$ a $x_{k+1}$ constituye una _iteración_ del algoritmo.
 
 ### Orden de Convergencia
 
-\Definicion el _orden de convergencia_ de una sucesión de una sucesión $x_k
-\rightarrow \underline{x}$ es el mayor número $\rho > 0$ tal que 
+\Definicion el _orden de convergencia_ de una sucesión $x_k \rightarrow
+\underline{x}$ es el mayor número $\rho > 0$ tal que
 $$ 
 \limtoinf{k}{\frac{|| x_{k+1} - \underline{x} ||}{||x_k - \underline{x}||^\rho}}
 = \beta < \infty
@@ -160,14 +160,14 @@ Si $x_n$ converge a $\alpha$ entonces $\rho \approx 1.62$.
 ### Método de la Falsa Posición
 
 Elegimos las aproximaciones iniciales $a_1$ y $b_1$ con $f(a_1)f(b_1) < 0$,
-luego obtenemos $c_1$ aplicando el método de la secante. 
+luego obtenemos $c_1$ aplicando el método de la secante sobre $a_1$ y $b_1$.
 
 + Si $f(a_1)f(c_1) < 0$, luego $a_2 = a_1$ y $b_2 = c_1$ 
 + Si $f(b_1)f(c_1) < 0$, luego $a_2 = c_1$ y $b_2 = b_1$
 + Si $f(c_1) = 0$, entonces $\alpha = c_1$
 
-Luego obtenemos $c_2$ aplicando el método de la secante a $a_2$ y $b_2$, luego
-repetimos el proceso.
+Luego $c_2$ aplicando el método de la secante a $a_2$ y $b_2$, y repetimos el
+proceso.
 
 #### Ventajas
 
@@ -270,7 +270,7 @@ y $g'$ son continuas en un intervalo alrededor de $\alpha$. Luego:
 1. Vimos que $\alpha - x_{n+1} = g'(cn)(\alpha - x_n)$ para algún $cn$ entre
    $\alpha$ y $x_n$. Luego $|\alpha - x_{n+1}| = |g'(cn)| |\alpha - x_n|$.
    Siendo $g'(x)$ continua y $|g'(\alpha)| < 1$, existe $\epsilon > 0$ tal que
-   $|g'(x) < 1|$ para todo $x \in [\alpha - \epsilon, \alpha + \epsilon]$. Luego
+   $|g'(x)| < 1$ para todo $x \in [\alpha - \epsilon, \alpha + \epsilon]$. Luego
    $cn$ también pertenece a $[\alpha - \epsilon, \alpha + \epsilon]$ y $|g'(cn)|
    < 1$. Por lo tanto $x_{n+1}$ está más próximo a $\alpha$ que $x_n$, por lo
    que la iteración converge a $\alpha$.
@@ -308,10 +308,10 @@ $$
 
 Usando el método de Newton tenemos:
 \begin{align*}
-0 &= f_1(x_1^{(0)}, x_2^{0}) 
+0 &= f_1(x_1^{(0)}, x_2^{(0)}) 
 + (x_1^{(1)} - x_1^{(0)})\frac{\delta f_1}{\delta x_1} (x_1^{(0)}, x_2^{(0)})
 + (x_2^{(1)} - x_2^{(0)})\frac{\delta f_1}{\delta x_2} (x_1^{(0)}, x_2^{(0)}) \\
-0 &= f_2(x_1^{(0)}, x_2^{0}) 
+0 &= f_2(x_1^{(0)}, x_2^{(0)}) 
 + (x_1^{(1)} - x_1^{(0)})\frac{\delta f_2}{\delta x_1} (x_1^{(0)}, x_2^{(0)})
 + (x_2^{(1)} - x_2^{(0)})\frac{\delta f_2}{\delta x_2} (x_1^{(0)}, x_2^{(0)})
 \end{align*}

@@ -4,7 +4,7 @@ Integración Numérica
 Dada una función $f : [a,b] \rightarrow \real$ se quiere calcular la integral
 definida $I(f) = \int_a^b f(x) dx = F(b) - F(a)$, donde $F(x)$ es cualquier
 antiderivada de $f(x)$. Una aproximación de la misma resulta $\sum_{i=0}^n a_i
-(f_xi)$.
+f(x_i)$.
 
 Integración Numérica Basada en Polinomios Interpolantes
 -------------------------------------------------------
@@ -66,7 +66,7 @@ aplicar el teorema anterior para obtener:
 &= \frac{1}{2} f''(c) \left[ \left( - \frac{x_1^3}{6} + \frac{x_0 x_1^2}{2} \right) 
 - \left( - \frac{x_0^3}{6} + \frac{x_0^2 x_1}{2} \right) \right] \\
 &= \frac{f''(c)}{12} \left[ x_1^3 - 3 x_0 x_1^2  + 3 x_0^2 x_1 - x_0^3 \right] \\
-&= - \frac{f''(c)}{12} (x_1 - x_0)^3 = -\frac{h^3}{6} f''(c)
+&= - \frac{f''(c)}{12} (x_1 - x_0)^3 = -\frac{h^3}{12} f''(c)
 \end{align*}
 
 Finalmente, la regla del trapecio queda dada por:
@@ -85,7 +85,7 @@ por $n$ trapecios $T_n$ resulta:
 T_n(f) 
 &= h \left( \frac{f(x_0) + f(x_1)}{2} \right) 
 + h \left( \frac{f(x_1) + f(x_2)}{2} \right)
-+ cdots
++ \cdots
 + h \left( \frac{f(x_{n-1}) + f(x_n)}{2} \right) \\
 &= h \left[\frac{1}{2}f(x_0) + f(x_1)+\cdots+f(x_{n-1}) + \frac{1}{2}f(x_n)\right]
 \end{align*}
@@ -138,14 +138,14 @@ resulta:
 + \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1 - x_2)} f(x_1) 
 + \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2 - x_0)} f(x_2)
 \right]}_{P_2(x)}  dx \\ 
-&+ \int_{x_0}^{x_2} \underbrace{\frac{(x-x0)(x-x1)(x-x2)}{6} 
+&+ \int_{x_0}^{x_2} \underbrace{\frac{(x-x_0)(x-x_1)(x-x_2)}{6} 
 f^{(3)}(\xi(x))}_{\text{aproximación del error}} dx
 \end{align*}
 
 Luego, resulta de operar algebraicamente que:
 \begin{align*}
 &\int_{x_0}^{x_2} P_2(x) dx = \frac{h}{3} [f(x_0) + 4 f(x_1) + f(x_2)] \\
-&\int_{x_0}^{x_2} \frac{(x-x0)(x-x1)(x-x2)}{6} f^{(3)}(\xi(x)) dx 
+&\int_{x_0}^{x_2} \frac{(x-x_0)(x-x_1)(x-x_2)}{6} f^{(3)}(\xi(x)) dx 
 = - \frac{h^5}{90} f^{(4)}(\xi)\ \text{p.a. }\xi \in [x_0,x_2]
 \end{align*}
 
@@ -180,20 +180,21 @@ E_n^S(f) = \int_a^b f(x) dx - S_n (f) = - \frac{h^4(b-a)}{180} f^{(4)}(cn)\
 \text{p.a. } cn \in [a,b]
 $$
 
-\Demostracion Sabemos que $E_n^S(f) = - \frac{h^5}{90} f''(\gamma_1) -
-\frac{h^5}{90} f''(\gamma_2) - \cdots - \frac{h^5}{90} f''(\gamma_n)$, donde
-$x_{j-1} \leq \gamma_j \leq x_j$. Reagrupando y multiplicando por $\frac{n}{n}$
-obtenemos:
+\Demostracion Sabemos que $E_n^S(f) = - \frac{h^5}{90} f^{(4)}(\gamma_1) -
+\frac{h^5}{90} f^{(4)}(\gamma_2) - \cdots - \frac{h^5}{90} f^{(4)}(\gamma_n)$,
+donde $x_{j-1} \leq \gamma_j \leq x_j$. Reagrupando y multiplicando por
+$\frac{(n/2)}{(n/2)}$ obtenemos:
 $$
-E_n^S(f) = - \frac{h^5}{90} \left(\frac{n}{2} \right) 
-\left[ \frac{f''(\gamma_1) + \cdots + f''(\gamma_n)}{n/2} \right]
+E_n^S(f) = - \frac{h^5}{90} \left(\frac{n}{2}
+\right) \left[ \frac{f^{(4)}(\gamma_1) + \cdots + f^{(4)}(\gamma_n)}{(n/2)}
+\right]
 $$
 
-Si llamamos $\xi_n = (f''(\gamma_1) + \cdots + f''(\gamma_n))/(n/2)$ luego se
-cumple que $min_{a \leq x \leq b} f^{(4)}(x) \leq \xi_n \leq max_{a \leq x \leq
-b} f^{(4)}(x)$. Por hipótesis, $f^{(4)}(x)$ es continua en $[a,b]$, luego existe
-$cn \in [a,b]$ tal que $f^{(4)}(cn) = \xi_n$. Como además $hn = b - a$ tenemos
-que $E_n^S(f) = - \frac{h^4(b - a)}{180} f^{(4)}(cn)$.
+Si llamamos $\xi_n = (f^{(4)}(\gamma_1) + \cdots + f^{(4)}(\gamma_n))/(n/2)$
+luego se cumple que $min_{a \leq x \leq b} f^{(4)}(x) \leq \xi_n \leq max_{a
+\leq x \leq b} f^{(4)}(x)$. Por hipótesis, $f^{(4)}(x)$ es continua en $[a,b]$,
+luego existe $cn \in [a,b]$ tal que $f^{(4)}(cn) = \xi_n$. Como además $hn = b -
+a$ tenemos que $E_n^S(f) = - \frac{h^4(b - a)}{180} f^{(4)}(cn)$.
 
 #### Estimación del Error de Simpson: 
 Sabemos que $E_n^S(f) = - \frac{h^4}{90} \frac{1}{2} [2nf^{(4)}(\gamma_1) +

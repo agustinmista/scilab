@@ -1,0 +1,2294 @@
+\linespread{1.5}\setlength{\parskip}{0.5ex}
+
+\sectionfont{\center\normalfont\huge\bfseries\itshape}\subsectionfont{\normalfont\Large\bfseries\itshape\underline}\subsubsectionfont{\normalfont\large\bfseries\itshape}
+
+\newcommand{\Definicion}[0]{\paragraph{Definición:}}\newcommand{\Teorema}[0]{\paragraph{Teorema:}}\newcommand{\Lema}[0]{\paragraph{Lema:}}\newcommand{\Corolario}[0]{\paragraph{Corolario:}}\newcommand{\Demostracion}[0]{\paragraph{\textit{Demostración:}}}\newcommand{\Ejemplo}[0]{\paragraph{\textit{Ejemplo:}}}
+
+\newcommand{\integer}[0]{\ensuremath{\mathbb{Z}}}\newcommand{\nat}[0]{\ensuremath{\mathbb{N}}}\newcommand{\real}[0]{\ensuremath{\mathbb{R}}}
+
+\newcommand{\limtoinf}[2]{\ensuremath{\lim_{#1 \to \infty} #2}}
+
+\newcommand{\serie}[1]{\ensuremath{\sum_{n=1}^\infty #1}}\newcommand{\serieidx}[2]{\ensuremath{\sum_{#1=1}^\infty #2}}\newcommand{\seriefrom}[2]{\ensuremath{\sum_{#1}^\infty #2}}\newcommand{\seriefromto}[3]{\ensuremath{\sum_{#1}^{#2} #3}}
+
+\newcommand{\implica}[0]{\ensuremath{\quad\Longrightarrow\quad}}\newcommand{\sii}[0]{\ensuremath{\quad\Longleftrightarrow\quad}}
+
+\newpage
+
+\hypertarget{sucesiones-y-series}{%
+\section{Sucesiones y Series}\label{sucesiones-y-series}}
+
+\hypertarget{sucesiones-numuxe9ricas}{%
+\subsection{Sucesiones Numéricas}\label{sucesiones-numuxe9ricas}}
+
+\Definicion una sucesión es una función
+\(f : \ensuremath{\mathbb{N}}\rightarrow \mathbb{R}\). Una sucesión
+genera una lista infinita de números \(f(1), f(2), ..., f(n), ...\).
+También puede notarse \(f_1, f_2, ..., f_n, ...\) ó \(\{f(n)\}\) ó
+\(\{f_n\}\) ó \(\{f_n\}_{n=1}^\infty\).
+
+\hypertarget{sucesiuxf3n-convergente}{%
+\subsubsection{Sucesión Convergente}\label{sucesiuxf3n-convergente}}
+
+Una sucesión \(f_n\) es \emph{convergente} si existe un número real
+\(L\) tal que para cada \(\epsilon > 0\) se puede encontrar un número
+natural \(N(\epsilon)\) tal que \(\forall n > N\) se verifique
+\(|f_n - L| < \epsilon\). Se dice entonces que \(L\) es el \emph{límite}
+de la sucesión \(f_n\), y se escribe
+\(L = \ensuremath{\lim_{n \to \infty} f_n}\) ó
+\(f_n \longrightarrow L\). Decimos entonces que \(f_n\) \emph{converge}
+a \(L\). Una sucesión no convergente se llama \emph{divergente}.
+
+\Teorema (Unicidad del límite) una sucesión convergente tiene un único
+límite.
+
+\hypertarget{sucesiones-acotadas}{%
+\subsubsection{Sucesiones Acotadas}\label{sucesiones-acotadas}}
+
+\Definicion una sucesión \(f_n\) se dice que está \emph{acotada
+superiormente} si existe un número \(c \in \mathbb{R}\) tal que
+\(\forall n \in \ensuremath{\mathbb{N}}, f_n \leq c\). Se dice que está
+\emph{acotada inferiormente} si existe un número \(k \in \mathbb{R}\)
+tal que \(\forall n \in \ensuremath{\mathbb{N}}, f_n \geq k\). Se dice
+que está \emph{acotada} si lo está superior e inferiormente, es decir
+que existe \(M > 0\) tal que
+\(\forall n \in \ensuremath{\mathbb{N}}, |f_n| \leq M\).
+
+\hypertarget{monotonuxeda}{%
+\subsubsection{Monotonía}\label{monotonuxeda}}
+
+\Definicion una sucesión \(f_n\) es:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Monótona creciente} si
+  \(\forall n \in \ensuremath{\mathbb{N}}, f_n \leq f_{n+1}\).
+\item
+  \emph{Monótona decreciente} si
+  \(\forall n \in \ensuremath{\mathbb{N}}, f_{n+1} \leq f_n\).
+\item
+  \emph{Estrictamente creciente} si
+  \(\forall n \in \ensuremath{\mathbb{N}}, f_n < f_{n+1}\).
+\item
+  \emph{Estrictamente decreciente} si
+  \(\forall n \in \ensuremath{\mathbb{N}}, f_{n+1} < f_n\).
+\end{itemize}
+
+\Teorema 
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Toda sucesión monótona creciente y acotada superiormente converge.
+\item
+  Toda sucesión monótona decreciente y acotada inferiormente converge.
+\end{enumerate}
+
+\hypertarget{operaciones-con-sucesiones}{%
+\subsubsection{Operaciones con
+Sucesiones}\label{operaciones-con-sucesiones}}
+
+\Teorema sean \(a_n\) y \(b_n\) sucesiones convergentes con límites
+\(a\) y \(b\) respectivamente. Luego se cumplen las siguientes reglas:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\ensuremath{\lim_{n \to \infty} (a_n + b_n)} = a + b\)
+\item
+  \(\ensuremath{\lim_{n \to \infty} (a_n - b_n)} = a - b\)
+\item
+  \(\ensuremath{\lim_{n \to \infty} (a_n \cdot b_n)} = a \cdot b\)
+\item
+  \(\ensuremath{\lim_{n \to \infty} (c \cdot a_n)} = c \cdot a\)
+  (\(c \in \mathbb{R}\))
+\item
+  \(\ensuremath{\lim_{n \to \infty} (a_n / b_n)} = a / b\) (si
+  \(b \neq 0\))
+\end{enumerate}
+
+\Teorema (del Sándwich) sean \(a_n\), \(b_n\) y \(c_n\) sucesiones. Si
+\(a_n \leq b_n \leq c_n\) para todo
+\(n > N \in \ensuremath{\mathbb{N}}\) y
+\(\ensuremath{\lim_{n \to \infty} a_n} = \ensuremath{\lim_{n \to \infty} c_n} = L\)
+entonces \(\ensuremath{\lim_{n \to \infty} b_n} = L\).
+
+\Teorema suponga que \(f(x)\) es una función definida para todo
+\(x \geq N\) y que \(f_n\) es una sucesión de números reales tal que
+\(f_n = f(n)\) para todo \(n \geq N\), entonces
+\(\ensuremath{\lim_{x \to \infty} f(x)} = L \Rightarrow \ensuremath{\lim_{n \to \infty} f_n} = L\).
+Por lo tanto podemos usar la regla de L'Hopital para calcular límites de
+sucesiones.
+
+\hypertarget{series-numuxe9ricas}{%
+\subsection{Series Numéricas}\label{series-numuxe9ricas}}
+
+\Definicion dada una sucesión \(a_n\) formamos otra \(S_n\) para la cual
+\(S_n = a_1 + a_2 + \cdots + a_n = \ensuremath{\sum_{n=1}^\infty a_n}\).
+Luego la sucesión \(S_n\) es llamada \emph{serie infinita} o
+\emph{serie} y se indica como \serie{a_n}.
+
+Una serie \serie{a_n} se dice:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{de términos positivos} si \(\forall n, a_n > 0\).
+\item
+  \emph{alternada} si \(a_n = (-1)^n c_n\) para alguna sucesión \(c_n\)
+  tal que \(\forall n, c_n > 0\).
+\end{itemize}
+
+\Ejemplo
+
+\begin{itemize}
+\tightlist
+\item
+  Serie \emph{armónica:} \serie{1/n}
+\item
+  Serie \emph{geométrica} (de razón \(r\)): \serie{r^n}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Si \(r > 0\) es una serie de términos positivos.
+  \item
+    Si \(r < 0\) es una serie alternada.
+  \item
+    Si \(r \neq 1\) entonces
+    \(\ensuremath{\sum_{n=1}^\infty r^n} = \frac{1 - r^{n+1}}{1 - r}\)
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{convergencia-y-divergencia-de-series}{%
+\subsubsection{Convergencia y Divergencia de
+Series}\label{convergencia-y-divergencia-de-series}}
+
+\Definicion se dice que la serie \serie{a_n} es convergente cuando la
+sucesión \(S_n\) tiene límite finito, y notamos
+\(\ensuremath{\lim_{n \to \infty} (\ensuremath{\sum_{k=1}^\infty a_k})} = \ensuremath{\lim_{n \to \infty} S_n} = S\).
+
+\Ejemplo la serie armónica \serie{1/n} no converge.
+
+Sabemos que \(\frac{1}{2} \leq S_{2n} - S_n\), luego suponemos que
+existe \(s\) tal que \(\ensuremath{\lim_{n \to \infty} S_n} = s\): \[ 
+\frac{1}{2} \leq \ensuremath{\lim_{n \to \infty} S_{2n}} - \ensuremath{\lim_{n \to \infty} S_n} = s - s = 0
+\qquad\text(ABS!) 
+\]
+
+\hypertarget{condiciuxf3n-necesaria-de-convergencia}{%
+\subsubsection{Condición Necesaria de
+Convergencia}\label{condiciuxf3n-necesaria-de-convergencia}}
+
+\Teorema si la serie \serie{a_n} converge, entonces
+\(\ensuremath{\lim_{n \to \infty} a_n} = 0\). En cambio, si
+\(\ensuremath{\lim_{n \to \infty} a_n} \neq 0\) entonces \serie{a_n} es
+divergente.
+
+\Demostracion suponemos que la serie \serie{a_n} converge a \(s\),
+luego: \[ 
+a_k = S_k - S_{k-1} \Rightarrow \ensuremath{\lim_{k \to \infty} S_k} - \ensuremath{\lim_{k \to \infty} S_{k-1}}
+= s - s = 0
+\]
+
+\Ejemplo Serie geométrica
+\(\ensuremath{\sum_{n=0}^\infty r^n} = \ensuremath{\sum_{n=1}^\infty r^{n-1}}\).
+
+\begin{itemize}
+\tightlist
+\item
+  Si \(|r| \geq 1\) entonces
+  \(\ensuremath{\lim_{n \to \infty} r^n} \neq 0 \Rightarrow\) la serie
+  diverge.
+\item
+  Si \(|r| < 1\) entonces
+  \(\ensuremath{\lim_{n \to \infty} r^n} = \ensuremath{\lim_{n \to \infty} \frac{1-r^{n+1}}{1-r}} = \frac{1}{1-r}\).
+\end{itemize}
+
+\hypertarget{reindexado-de-tuxe9rminos}{%
+\subsubsection{Reindexado de Términos}\label{reindexado-de-tuxe9rminos}}
+
+Si \(a_n\) es una serie, entonces. \[ 
+\ensuremath{\sum_{n=1}^\infty a_n} = \ensuremath{\sum_{n=1+h}^\infty a_{n-h}} = \ensuremath{\sum_{n=1-h}^\infty a_{n+h}}
+\] Si \serie{a_n} converge, entonces \seriefrom{n=k}{a_n} converge para
+cualquier \(k > 1\). \[
+\ensuremath{\sum_{n=1}^\infty a_n} = a_1 + a_2 + \cdots + a_{k-1} + \ensuremath{\sum_{n=k}^\infty a_n}
+\] En particular para la serie geométrica
+\(\ensuremath{\sum_{n=1}^\infty r^n} = \frac{r}{1-r}\) si \(|r| < 1\).
+
+\hypertarget{propiedad-de-linearidad}{%
+\subsubsection{Propiedad de Linearidad}\label{propiedad-de-linearidad}}
+
+\Teorema sean \serie{a_n} y \serie{b_n} series convergentes con sumas
+\(a\) y \(b\) respectivamente. Si \(\alpha\) y \(\beta\) son constantes
+entonces \serie{(\alpha
+a_n + \beta b_n)} es convergente con suma \(\alpha a + \beta b\).
+
+\Corolario si \serie{a_n} converge y \serie{b_n} diverge entonces
+\serie{(a_n +
+b_n)} diverge.
+
+\Demostracion si \serie{(a_n + b_n)} fuera convergente, entonces también
+lo sería \serie{b_n} ya que
+\(\ensuremath{\sum_{n=1}^\infty b_n} = \ensuremath{\sum_{n=1}^\infty (a_n + b_n)} + \ensuremath{\sum_{n=1}^\infty (-a_n)}\).
+
+\hypertarget{propiedad-telescuxf3pica}{%
+\subsubsection{Propiedad Telescópica}\label{propiedad-telescuxf3pica}}
+
+\Definicion una serie \serie{a_n} es \emph{telescópica} cuando se puede
+escribir como \serie{(b_n - b_{n+1})} para alguna sucesión \(b_n\) tal
+que \(a_n = b_n - b_{n+1}\). Luego tenemos que
+\(\ensuremath{\sum_{k=1}^{n} (b_k - b_{k+1})} = b_1 - b_{n+1}\).
+
+\Teorema sean \(a_n\) y \(b_n\) sucesiones tales que
+\(a_n = b_n - b_{n+1}\). Luego \serie{a_n} converge \sii la
+\textbf{sucesión} \(b_n\) converge. En cuyo caso
+\(\ensuremath{\sum_{n=1}^\infty a_n} = b_1 - \ensuremath{\lim_{n \to \infty} b_n}\).
+
+\hypertarget{criterios-de-convergencia-de-series-de-tuxe9rminos-positivos}{%
+\subsubsection{Criterios de Convergencia de Series de Términos
+Positivos}\label{criterios-de-convergencia-de-series-de-tuxe9rminos-positivos}}
+
+\begin{itemize}
+\item
+  \textbf{Criterio de Acotación:} si \(\forall n \geq 1, a_n \geq 0\),
+  entonces \serie{a_n} converge \implica la sucesión de sus sumas
+  parciales está acotada superiormente.
+\item
+  \textbf{Criterio de Comparación:} si \(a_n \geq 0\), \(b_n \geq 0\) y
+  existe \(c > 0\) tal que \(a_n \leq c b_n\) si \(n \geq N\) para algún
+  \(N\), entonces:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Si \serie{b_n} converge \implica \serie{a_n} converge.
+  \item
+    Si \serie{a_n} diverge \implica \serie{b_n} diverge.
+  \end{itemize}
+\item
+  \textbf{Criterio del Límite:} sean \(a_n\) y \(b_n\) sucesiones tales
+  que \(a_n \geq 0\) y \(b_n \geq 0\) y sea
+  \(\lambda = \ensuremath{\lim_{n \to \infty} \frac{a_n}{b_n}}\). Si
+  \(\lambda\) es finito y \(\lambda \neq 0\), entonces \serie{b_n}
+  converge \sii \serie{a_n} converge.
+\item
+  \textbf{Criterio de la Raíz:} sea \(a_n\) una sucesión tal que
+  \(a_n > 0\) y sea
+  \(\alpha = \ensuremath{\lim_{n \to \infty} \sqrt[n]{a_n}}\), entonces:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\alpha < 1\) \implica \serie{a_n} converge.
+  \item
+    \(\alpha > 1\) \implica \serie{a_n} diverge.
+  \item
+    \(\alpha = 1\) \implica el criterio no decide.
+  \end{itemize}
+\item
+  \textbf{Criterio del Cociente:} sea \(a_n\) una sucesión tal que
+  \(a_n > 0\) y sea
+  \(\alpha = \ensuremath{\lim_{n \to \infty} \frac{a_{n+1}}{a_n}}\),
+  entonces:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\alpha < 1\) \implica \serie{a_n} converge.
+  \item
+    \(\alpha > 1\) \implica \serie{a_n} diverge.
+  \item
+    \(\alpha = 1\) \implica el criterio no decide.
+  \end{itemize}
+\item
+  \textbf{Criterio de la integral:} sea \(f\) una función
+  \textbf{positiva} y \textbf{estrictamente decreciente} definida en
+  \([1, \infty)\) tal que
+  \(\forall n \in \ensuremath{\mathbb{N}}, f(n) = a_n\). La serie
+  \serie{a_n} converge \sii \(\int_1^\infty f(x)dx\) converge.
+\end{itemize}
+
+\hypertarget{criterios-de-convergencia-de-series-alternadas}{%
+\subsubsection{Criterios de Convergencia de Series
+Alternadas}\label{criterios-de-convergencia-de-series-alternadas}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Criterio de Leibniz:} si \(a_n\) es una sucesión
+  \textbf{monótona decreciente} con límite 0, entonces la serie
+  alternada \serie{(-1)^{n-1}a_n} converge.
+\end{itemize}
+
+\hypertarget{convergencia-condicional-y-absoluta}{%
+\subsubsection{Convergencia Condicional y
+Absoluta}\label{convergencia-condicional-y-absoluta}}
+
+\Teorema si \serie{|a_n|} converge, entonces \serie{a_n} converge y
+además tenemos que
+\(|\ensuremath{\sum_{n=1}^\infty a_n}| \leq \ensuremath{\sum_{n=1}^\infty |a_n|}\).
+
+\Demostracion definimos la sucesión de términos positivos
+\(b_n = a_n +|a_n|\). Luego resulta \(b_n = 0\) ó \(b_n = 2 |a_n |\) y
+siempre vale que \(0 \leq b_n \leq 2|a_n|\). Como además sabemos que
+\serie{|a_n|} converge y \(2\ensuremath{\sum_{n=1}^\infty |a_n|}\)
+domina a \serie{b_n} luego \serie{b_n} converge. Como \serie{b_n}
+converge y
+\(\ensuremath{\sum_{n=1}^\infty a_n} = \ensuremath{\sum_{n=1}^\infty b_n} - \ensuremath{\sum_{n=1}^\infty |a_n|}\)
+entonces \serie{a_n} converge por el teorema de linearidad.
+
+\Definicion una serie \serie{a_n} es \emph{absolutamente convergente} si
+\serie{|a_n|} es convergente.
+
+\Definicion una serie \serie{a_n} es \emph{condicionalmente convergente}
+si \serie{a_n} es convergente pero \serie{|a_n|} es divergente.
+
+\hypertarget{errores}{%
+\section{Errores}\label{errores}}
+
+\hypertarget{representaciuxf3n-computacional-de-nuxfameros}{%
+\subsection{Representación Computacional de
+Números}\label{representaciuxf3n-computacional-de-nuxfameros}}
+
+\hypertarget{enteros-binarios}{%
+\subsubsection{Enteros Binarios}\label{enteros-binarios}}
+
+\[
+x = (a_n a_{n-1} ... a_1 a_0)_2 \quad\text{con}\quad a_i \in \{0,1\}
+\]
+
+\hypertarget{binario-rightarrow-decimal}{%
+\paragraph{\texorpdfstring{Binario \(\rightarrow\)
+Decimal:}{Binario \textbackslash{}rightarrow Decimal:}}\label{binario-rightarrow-decimal}}
+
+\[
+x = a_n 2^n + a_{n-1} 2^{n-1} + \cdots + a_1 2^1 + a_0 = \sum_{n=0}^n a^n 2^n
+\]
+
+\hypertarget{decimal-rightarrow-binario}{%
+\paragraph{\texorpdfstring{Decimal \(\rightarrow\)
+Binario:}{Decimal \textbackslash{}rightarrow Binario:}}\label{decimal-rightarrow-binario}}
+
+\[
+\text{$x$ número decimal} \  \rightarrow \
+\text{dividir x por 2} \  \rightarrow \
+\text{llamar $x$ al cociente y $a_0$ al resto} \  \rightarrow \
+\text{repetir}
+\]
+
+\hypertarget{fracciones-binarias}{%
+\subsubsection{Fracciones Binarias}\label{fracciones-binarias}}
+
+\[
+x = (.a_1 a_2 ... a_m ...)_2 \quad\text{con}\quad a_i \in \{0,1\}
+\]
+
+\hypertarget{binario-rightarrow-decimal-1}{%
+\paragraph{\texorpdfstring{Binario \(\rightarrow\)
+Decimal:}{Binario \textbackslash{}rightarrow Decimal:}}\label{binario-rightarrow-decimal-1}}
+
+\[
+x = a_1 2^{-1} + a_2 2^{-2} + \cdots + a_m 2^{-m} + \cdots 
+= \sum_{n=0}^\infty a^n 2^{-n}
+\]
+
+\hypertarget{decimal-rightarrow-binario-1}{%
+\paragraph{\texorpdfstring{Decimal \(\rightarrow\)
+Binario:}{Decimal \textbackslash{}rightarrow Binario:}}\label{decimal-rightarrow-binario-1}}
+
+\[
+\text{$x$ número decimal} \  \rightarrow \
+\text{multiplicar x por 2} \  \rightarrow \
+\text{llamar $x$ a la parte decimal y $a_1$ a la parte entera} \  \rightarrow \
+\text{repetir}
+\]
+
+\hypertarget{representaciuxf3n-computacional-de-nuxfameros-en-punto-flotante}{%
+\subsection{Representación Computacional de Números en Punto
+Flotante}\label{representaciuxf3n-computacional-de-nuxfameros-en-punto-flotante}}
+
+Sea \(x \in \ensuremath{\mathbb{R}}\), \(x\) se representa en punto
+flotante (\(fl(x)\)) como:
+
+\[ 
+fl(x) = \delta(. a_1 a_2 ... a_n)_\beta \cdot \beta^E 
+\]
+
+Donde:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\beta\): base de representación
+\item
+  \(\delta\): signo (0 = positivo, 1 = negativo)
+\item
+  \(E\): exponente (\(E \in \ensuremath{\mathbb{Z}}\))
+\end{itemize}
+
+\hypertarget{norma-ieee754-para-nuxfameros-en-punto-flotante}{%
+\subsubsection{Norma IEEE754 para Números en Punto
+Flotante}\label{norma-ieee754-para-nuxfameros-en-punto-flotante}}
+
+Sea \(x \in \ensuremath{\mathbb{R}}\), \(x\) se representa en punto
+flotante IEEE754 (\(fl(x)\)) como:
+
+\[ 
+fl(x) = \delta(\text{\textbf{1}}. a_1 a_2 ... a_n)_2 \cdot 2^E 
+\]
+
+\hypertarget{precisiuxf3n-simple-32-bits}{%
+\paragraph{Precisión Simple (32
+bits)}\label{precisiuxf3n-simple-32-bits}}
+
+\(\qquad\rightarrow\qquad\underbracket{\hbox{\qquad1\qquad}}_{\hbox{signo}} \underbracket{\hbox{\quad\qquad8\quad\qquad}}_{\hbox{exponente}} \underbracket{\hbox{\qquad\qquad23\qquad\qquad}}_{\hbox{mantisa}}\)
+
+\hypertarget{precisiuxf3n-doble-64-bits}{%
+\paragraph{Precisión Doble (64 bits)}\label{precisiuxf3n-doble-64-bits}}
+
+\(\;\, \qquad\rightarrow \qquad\underbracket{\hbox{\qquad1\qquad}}_{\hbox{signo}} \underbracket{\hbox{\quad\qquad11\quad\qquad}}_{\hbox{exponente}} \underbracket{\hbox{\qquad\qquad52\qquad\qquad}}_{\hbox{mantisa}}\)
+
+\hypertarget{muxe1ximo-valor-del-exponente-con-precisiuxf3n-simple}{%
+\paragraph{Máximo valor del exponente con precisión
+simple:}\label{muxe1ximo-valor-del-exponente-con-precisiuxf3n-simple}}
+
+\(\qquad (11111111)_2 = 2^8-1 = 255.\\\) En IEEE754 se representan del 1
+al 254, 0 y 255 está reservados para casos especiales. Utilizando un
+sesgo de 127 se pueden representar exponentes en el rango
+\(-126 \leq E \leq 127\).
+
+\_
+
+\emph{¿Cuál es el mayor entero \(M\) tal que todo entero \(x\) tal que
+\(0 \leq x \leq M\) se puede representar en forma exacta en punto
+flotante?}
+
+\[
+(1.11...1)_2 \cdot 2^{23} = 2^{23} + 2^{22} + \cdots + 2^1 + 2^0 = 2^{24} + 1
+\]
+
+\_
+
+\emph{¿Cuál es el menor número \(y\) representable que es mayor que 1?}
+
+\[
+(1.00...01)_2 \cdot 2^0 = 1 + 2^{-23}
+\]
+
+Luego el \emph{epsilon de la máquina} es \(\epsilon = y - 1 = 2^{-23}\).
+
+\hypertarget{corte-o-truncamiento}{%
+\paragraph{Corte o Truncamiento:}\label{corte-o-truncamiento}}
+
+si \(x\) tiene una mantisa \(\underline{x}\) que no cabe en el espacio
+disponible de \(n\) bits, el \emph{truncamiento} consiste en cortar los
+dígitos \(a_{n+1}, a_{n+2}, ...\). Luego el error es \(x - fl(x)\) y es
+siempre positivo, lo cual puede generar propagación de errores.
+
+\hypertarget{redondeo-en-decimal}{%
+\paragraph{Redondeo en Decimal:}\label{redondeo-en-decimal}}
+
+\[
+fl(x)=
+\begin{cases}
+\delta(. a_1 a_2 ... a_n)_{10} \cdot 10^E, & a_{n+1} < 5 \quad(\text{truncar})\\ 
+\delta [(. a_1 a_2 ... a_n)_{10} + (.0 0 ... 0 1)_{10} ] 
+  \cdot 10^E, & a_{n+1} \geq 5 \quad(\text{redondear})
+\end{cases}
+\]
+
+\hypertarget{redondeo-en-binario}{%
+\paragraph{Redondeo en Binario:}\label{redondeo-en-binario}}
+
+\[
+fl(x)=
+\begin{cases}
+\delta(1 . a_1 a_2 ... a_n)_2 \cdot 2^E, & a_{n+1} = 0\\ 
+\delta [(1 . a_1 a_2 ... a_n)_2 + (.0 0 ... 0 1)_2 ] \cdot 2^E, & a_{n+1} = 1 
+\end{cases}
+\]
+
+\_
+
+Usando redondeo el mayor error posible es la mitad que usando
+truncamiento. Tiene en promedio la mitad de las veces un signo y la
+mitad el otro, por lo que \emph{reduce la propagación de errores}.
+
+\hypertarget{error-absoluto-y-relativo}{%
+\subsection{Error Absoluto y Relativo}\label{error-absoluto-y-relativo}}
+
+\hypertarget{error-absoluto}{%
+\paragraph{Error Absoluto:}\label{error-absoluto}}
+
+\(|\text{valor verdadero} - \text{valor aproximado}| = |x_v - x_a|\)
+
+\hypertarget{error-relativo}{%
+\paragraph{Error Relativo:}\label{error-relativo}}
+
+\(\frac{\text{error absoluto}}{|\text{valor verdadero|}} = \frac{|x_v - x_a|}{|x_v|}\)
+
+\hypertarget{cifras-significativas}{%
+\subsection{Cifras Significativas}\label{cifras-significativas}}
+
+\Definicion se dice que \(x_a\) tiene \(m\) cifras significativas con
+respecto a \(x_v\) si \(|error(x_a)| \leq 5\) unidades en el dígito
+\(m+1\) de \(x_v\), contando de izquierda a derecha desde el primer
+dígito distinto de 0.
+
+\Ejemplo \(x_a = 0.02138\), \(x_v = 0.02144\), luego
+\(|x_v - x_a| = 0.0006\) y \(x_a\) tiene 2 cifras significativas.
+
+\_
+
+Se puede demostrar que si el error relativo de \(x_a\) respecto de
+\(x_v\) es menor a \(5 \times 10 ^{-m-1}\) luego \(x_a\) tiene \(m\)
+cifras significativas respecto a \(x_v\).
+
+\hypertarget{fuentes-de-errores-en-problemas-matemuxe1ticos-de-ingenieruxeda}{%
+\subsubsection{Fuentes de Errores en Problemas Matemáticos de
+Ingeniería}\label{fuentes-de-errores-en-problemas-matemuxe1ticos-de-ingenieruxeda}}
+
+\begin{itemize}
+\tightlist
+\item
+  Errores de Modelado Matemático
+\item
+  Equivocaciones
+\item
+  Errores Observacionales
+\item
+  Errores de Redondeo/Truncamiento
+\item
+  Errores de Aproximación Matemática
+\end{itemize}
+
+\hypertarget{polinomio-de-taylor}{%
+\subsection{Polinomio de Taylor}\label{polinomio-de-taylor}}
+
+\Definicion sea \(f(x)\) una función derivable alrededor de \(x = a\),
+con tantas derivadas como sea necesario. Buscamos un polinomio \(P(x)\)
+tal que: \begin{align*}
+P(a) &= f(a) \\
+P'(a) &= f'(a) \\
+&\vdots \\
+P^{(n)}(a) &= f^{(n)}(a)
+\end{align*}
+
+La fórmula general para dicho polinomio es: \[
+P_n(x) 
+= f(a) 
++ f'(a)(x-a) 
++ \frac{1}{2}f''(a)(x-a)^2 
++ \cdots + \frac{1}{n!} f^{(n)}(a)(x-a)^n
+= \sum_{i=0}^n \frac{f^{(n)}(a)}{n!} (x-a)^n
+\] Luego \(f(x) \approx P_n(x)\) alrededor de \(a\).
+
+\hypertarget{error-del-polinomio-de-taylor}{%
+\subsubsection{Error del Polinomio de
+Taylor}\label{error-del-polinomio-de-taylor}}
+
+\Teorema suponga que \(f(x)\) tiene \(n+1\) derivadas continuas en un
+intervalo \(\alpha \leq x \leq \beta\) y que el punto \(a\) pertenece a
+dicho intervalo. El error del polinomio de Taylor está dado por \[ 
+R_n(x) = f(x) - P_n(x) = \frac{f^{(n+1)}(cx)}{(n+1)!} (x-a)^{n+1}  
+\] donde \(cx\) pertenece al intervalo entre \(x\) y \(a\).
+
+\hypertarget{soluciuxf3n-de-ecuaciones-no-lineales}{%
+\section{Solución de Ecuaciones No
+Lineales}\label{soluciuxf3n-de-ecuaciones-no-lineales}}
+
+\hypertarget{algoritmo}{%
+\subsection{Algoritmo}\label{algoritmo}}
+
+\Definicion dado un punto inicial \(x_0 \in \ensuremath{\mathbb{R}}^n\),
+un \emph{algoritmo} genera la secuencia \(x_1, x_2, ...\) donde
+\(x_{k+1} \in A(x_k)\) para cada \(k\). La transformación de \(x_k\) a
+\(x_{k+1}\) constituye una \emph{iteración} del algoritmo.
+
+\hypertarget{criterios-de-terminaciuxf3n}{%
+\subsubsection{Criterios de
+Terminación}\label{criterios-de-terminaciuxf3n}}
+
+\begin{align*}
+(1) &\quad || x_{k+n} - x_k || < \epsilon \\
+(2) &\quad \frac{|| x_{k+1} - x_k ||}{||x_k||} < \epsilon \\
+(3) &\quad | f(x_{k+n}) - f(x_k) | < \epsilon
+\end{align*}
+
+\hypertarget{orden-de-convergencia}{%
+\subsubsection{Orden de Convergencia}\label{orden-de-convergencia}}
+
+\Definicion el \emph{orden de convergencia} de una sucesión
+\(x_k \rightarrow \underline{x}\) es el mayor número \(\rho > 0\) tal
+que \[ 
+\ensuremath{\lim_{k \to \infty} \frac{|| x_{k+1} - \underline{x} ||}{||x_k - \underline{x}||^\rho}}
+= \beta < \infty
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  Si \(\rho = 1\) y \(\beta \in (0,1)\), la convergencia es
+  \emph{lineal} y \(\beta\) es la \emph{velocidad de convergencia}.
+\item
+  Si \(\rho = 2\) y \(\beta < \infty\), la convergencia es
+  \emph{cuadrática}.
+\item
+  Si \(\rho > 1\) ó \(\rho = 1\) y \(\beta = 0\), la convergencia es
+  \emph{superlineal}.
+\end{itemize}
+
+\Definicion la convergencia es superlineal si \[
+\ensuremath{\lim_{k \to \infty} \frac{|| x_{k+1} - \underline{x} ||}{||x_k - \underline{x}||}} = 0
+\] Además, la \emph{convergencia cuadrática es superlineal}.
+
+\_
+
+Por otro lado, suponemos que la convergencia es de orden \(\rho\), y sea
+\(\alpha > 0\) y \(\beta\) tal que \(0 < \beta < \infty\): \[
+\ensuremath{\lim_{k \to \infty} \frac{|| x_{k+1} - \underline{x} ||}{||x_k - \underline{x}||^{\rho+\alpha}}}
+= \frac{\beta}{\ensuremath{\lim_{k \to \infty} || x_k - \underline{x} ||^{\alpha}}}
+\quad \longrightarrow \quad \infty
+\] Por lo tanto, si se tiene convergencia de orden \(\rho\), no se tiene
+convergencia de orden \(\rho+\alpha\) con \(\alpha>0\).
+
+\hypertarget{soluciuxf3n-de-ecuaciones-no-lineales-1}{%
+\subsection{Solución de Ecuaciones No
+Lineales}\label{soluciuxf3n-de-ecuaciones-no-lineales-1}}
+
+\hypertarget{rauxedces-o-ceros}{%
+\subsubsection{Raíces o Ceros}\label{rauxedces-o-ceros}}
+
+\Definicion sea
+\(f : \ensuremath{\mathbb{R}}\rightarrow \ensuremath{\mathbb{R}}\) una
+función no lineal. Se llama \emph{raíz o cero} de la ecuación
+\(f(x) = 0\) a todo valor \(\alpha\) tal que \(f(\alpha) = 0\).
+
+\Teorema (de Bolsano) sea \(f\) una función continua en
+\([a,b] \subset \ensuremath{\mathbb{R}}\) tal que \(f(a)f(b) < 0\),
+luego existe un \(c \in [a,b]\) tal que \(f(c) = 0\).
+
+\hypertarget{muxe9todo-de-la-bisecciuxf3n}{%
+\subsubsection{Método de la
+Bisección}\label{muxe9todo-de-la-bisecciuxf3n}}
+
+Suponemos que \(f(x)\) es continua en \([a,b]\) y que \(f(a)f(b) < 0\),
+luego \(f\) tiene al menos una raíz en el intervalo. Dada una tolerancia
+del error \(\epsilon>0\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Defina \(c = (a+b)/2\).
+\item
+  Si \(b - c \leq \epsilon\), aceptar \(c\) como raíz y detenerse.
+\item
+  Si \(b - c > \epsilon\), comparar el signo de \(f(c)\) con el de
+  \(f(a)\) y \(f(b)\).
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Si \(f(b)f(c) \leq 0\), reemplazar \(a\) con \(c\).
+  \item
+    En caso contrario, reemplazar \(b\) con \(c\).
+  \end{itemize}
+\item
+  Regresar al paso 1.
+\end{enumerate}
+
+\hypertarget{acotaciuxf3n-del-error}{%
+\paragraph{Acotación del Error}\label{acotaciuxf3n-del-error}}
+
+Tenemos que \(b_{k+1} - a_{k+1} = \frac{1}{2}(b_k - a_k)\), luego por
+inducción tenemos que \(b_k - a_k = (\frac{1}{2})^{k-1}(b_1 - a_1)\). Si
+\(\alpha\) es una solución del sistema, luego
+\(|\alpha - c_k| \leq (\frac{1}{2})^{k-1}(b_1 - a_1)\) y \(c_k\)
+converge a \(\alpha\) cuando \(k \rightarrow \infty\).
+
+Si queremos obtener un error \(|\alpha - c_k| \leq \epsilon\), esto se
+cumple cuando: \[
+k \geq \frac{ln(\frac{b-a}{\epsilon})}{ln(2)}
+\]
+
+\hypertarget{ventajas}{%
+\paragraph{Ventajas}\label{ventajas}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Siempre converge
+\item
+  Acotación de error garantizado
+\item
+  Velocidad de convergencia garantizada.
+\end{enumerate}
+
+\hypertarget{desventaja}{%
+\paragraph{Desventaja}\label{desventaja}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  La convergencia es lenta en comparación con otros métodos.
+\end{enumerate}
+
+\hypertarget{muxe9todo-de-newton-newton-raphson}{%
+\subsubsection{Método de Newton
+(Newton-Raphson)}\label{muxe9todo-de-newton-newton-raphson}}
+
+Sea \(\alpha\) una raíz de \(f(x) = 0\). Supongamos que
+\(f \in \mathbb{C}^2\) en \([a,b]\) y sea \(x_0 \in [a,b]\) una
+estimación ``cercana'' de \(\alpha\). Consideramos el polinomio de
+Taylor
+\(f(x) = f(x_0) + (x - x_0)f'(x_0) + \frac{(x - x_0)^2}{2}f''(cx)\) con
+\(cx\) entre \(x\) y \(x_0\). Obtenemos una nueva estimación de
+\(\alpha\) haciendo \(P_1(x) = 0 = f(x_0) + (x_1 - x_0)f'(x)\) de donde
+\(x_1 = x_0 - (f(x_0) / f'(x_0))\). Repitiendo el proceso obtenemos que
+\(x_{n+1} = x_n - (f(x_n) / f'(x_n))\).
+
+\hypertarget{anuxe1lisis-del-error}{%
+\paragraph{Análisis del Error}\label{anuxe1lisis-del-error}}
+
+\begin{align*}
+0 = f(\alpha) 
+&= f(x_n) + (\alpha - x_n)f'(x_n) + (\alpha - x_n)^2 \,\frac{f''(cx)}{2} \\
+&= \frac{f(x_n)}{f'(x_n)} + (\alpha - x_n) 
++ (\alpha - x_n)^2 \,\frac{f''(cx)}{2f'(x_n)}\\
+&= (x_n - x_{n+1}) + \alpha - x_n + (\alpha - x_n)^2 \,\frac{f''(cx)}{2f'(x_n)}\\
+&\Rightarrow \alpha - x_{n+1} = (\alpha - x_n)^2 \frac{f''(cx)}{2f'(x_n)} 
+\qquad \text{(Error)} \\
+&\Rightarrow \frac{|\alpha - x_{n+1}|}{(\alpha - x_n)^2} 
+=  \left|\frac{f''(cx)}{2f'(x_n)}\right|
+\qquad \text{(Orden de convergencia)} \\
+\end{align*}
+
+Es decir, suponiendo que el método converge, éste lo hace de manera
+cuadrática. Sin embargo, la convergencia no está garantizada a partir de
+cualquier valor inicial \(x_0\).
+
+\hypertarget{ventajas-1}{%
+\paragraph{Ventajas}\label{ventajas-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Converge rápidamente en la mayoría de los casos.
+\item
+  Formulación sencilla.
+\end{enumerate}
+
+\hypertarget{desventajas}{%
+\paragraph{Desventajas}\label{desventajas}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Puede no converger.
+\item
+  Puede ocurrir que \(f'(\alpha) = 0\).
+\item
+  Necesitamos conocer tanto \(f(x)\) como \(f'(x)\).
+\end{enumerate}
+
+\hypertarget{muxe9todo-de-la-secante}{%
+\subsubsection{Método de la Secante}\label{muxe9todo-de-la-secante}}
+
+\[
+x_{n+1} = x_n - f(x_n)\frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}
+\]
+
+Si \(x_n\) converge a \(\alpha\) entonces \(\rho \approx 1.62\).
+
+\hypertarget{ventajas-2}{%
+\paragraph{Ventajas}\label{ventajas-2}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Converge más rápido que la convergencia lineal
+\item
+  No requiere \(f'(x)\).
+\item
+  Requiere una única evaluación de \(f(x)\) por iteración.
+\end{enumerate}
+
+\hypertarget{desventajas-1}{%
+\paragraph{Desventajas}\label{desventajas-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Puede no converger.
+\item
+  Puede tener dificultades si \(f'(\alpha) = 0\).
+\item
+  El método de Newton se puede generalizar más fácilmente a sistemas de
+  ecuaciones.
+\end{enumerate}
+
+\hypertarget{muxe9todo-de-la-falsa-posiciuxf3n}{%
+\subsubsection{Método de la Falsa
+Posición}\label{muxe9todo-de-la-falsa-posiciuxf3n}}
+
+Elegimos las aproximaciones iniciales \(a_1\) y \(b_1\) con
+\(f(a_1)f(b_1) < 0\), luego obtenemos \(c_1\) aplicando el método de la
+secante sobre \(a_1\) y \(b_1\).
+
+\begin{itemize}
+\tightlist
+\item
+  Si \(f(a_1)f(c_1) < 0\), luego \(a_2 = a_1\) y \(b_2 = c_1\)
+\item
+  Si \(f(b_1)f(c_1) < 0\), luego \(a_2 = c_1\) y \(b_2 = b_1\)
+\item
+  Si \(f(c_1) = 0\), entonces \(\alpha = c_1\)
+\end{itemize}
+
+Luego \(c_2\) aplicando el método de la secante a \(a_2\) y \(b_2\), y
+repetimos el proceso.
+
+\hypertarget{ventajas-3}{%
+\paragraph{Ventajas}\label{ventajas-3}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  La convergencia está garantizada.
+\end{enumerate}
+
+\hypertarget{desventajas-2}{%
+\paragraph{Desventajas}\label{desventajas-2}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Más lento que el método de la secante.
+\end{enumerate}
+
+\hypertarget{muxe9todos-iterativos-de-punto-fijo}{%
+\subsection{Métodos Iterativos de Punto
+Fijo}\label{muxe9todos-iterativos-de-punto-fijo}}
+
+\hypertarget{fuxf3rmula-general}{%
+\paragraph{Fórmula General}\label{fuxf3rmula-general}}
+
+\(x_{n+1} = g(x_n)\) donde \(g(x)\) es una función apropiada.
+
+\hypertarget{punto-fijo}{%
+\subsubsection{Punto fijo}\label{punto-fijo}}
+
+\Definicion dada una función
+\(g : \ensuremath{\mathbb{R}}\rightarrow \ensuremath{\mathbb{R}}\)
+continua diremos que \(\alpha\) es un punto fijo de \(g\) si
+\(g(\alpha) = \alpha\).
+
+\begin{itemize}
+\tightlist
+\item
+  El método puede converger o diverger dependiendo de \(x_0\).
+\item
+  El método puede converger a una raíz u otra dependiendo de la elección
+  de \(g(x)\).
+\item
+  La convergencia puede ser más rápida o más lenta dependiendo de
+  \(g(x)\).
+\end{itemize}
+
+\Ejemplo el método de Newton es un método iterativo de punto fijo con
+\(g(x) = x -(f(x) / f'(x))\).
+
+\hypertarget{existencia-de-soluciones-de-x-gx}{%
+\subsubsection{\texorpdfstring{Existencia de Soluciones de
+\(x = g(x)\)}{Existencia de Soluciones de x = g(x)}}\label{existencia-de-soluciones-de-x-gx}}
+
+\Lema sea \(g(x)\) una función continua en \([a,b)\) y suponga que \(g\)
+satisface que
+\(a \leq x \leq b \ensuremath{\quad\Longrightarrow\quad}a \leq g(x) \leq b\).
+Luego \(x = g(x)\) tiene al menos una solución en \([a,b]\).
+
+\Demostracion consideremos la función continua \(f(x) = x - g(x)\) con
+\(a \leq x \leq b\). Evaluando los puntos extremos, \(f(a) \leq 0\) y
+\(f(b) > 0\). Luego por teorema de Bolsano existe \(\alpha \in [a,b]\)
+tal que \(f(\alpha) = 0\) y por ende \(\alpha = g(\alpha)\).
+
+\Teorema sea
+\(g : \ensuremath{\mathbb{R}}\rightarrow \ensuremath{\mathbb{R}}\) tal
+que \(g \in \mathbb{C}^1\) en \([a,b]\). Suponga que \(g\) satisface
+\(a \leq x \leq b \ensuremath{\quad\Longrightarrow\quad}a \leq g(x) \leq b\).
+Si \(\lambda := sup |g'(x)| < 1\) con \(x \in [a,b]\). Luego se cumplen:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Existe una solución única \(\alpha\) de la ecuación \(x = g(x)\) en
+  \([a,b]\).
+\item
+  Para cualquier valor inicial \(x_0 \in [a,b]\), la iteración
+  \(x_{n+1} = g(x_n)\) converge a \(\alpha\).
+\item
+  \(|\alpha - x_n| \leq \lambda^n(x_0 - x_1) / (1-\lambda)\)
+\item
+  \(\ensuremath{\lim_{n \to \infty} (\alpha - x_{n+1}) / (\alpha - x_n)} = g'(\alpha)\).
+  Por lo tanto para \(x_n\) cercano a \(\alpha\) tenemos que
+  \(\alpha - x_{n+1} \approx g'(\alpha)(\alpha - x_n)\),
+\end{enumerate}
+
+\Demostracion las hipótesis sobre \(g\) permiten aplicar el lema
+anterior para afirmar que existe al menos una solución de \(x = g(x)\)
+en \([a,b]\). Luego por el teorema del valor medio tenemos que para
+\(w, z \in [a,b]\) se cumple \(g(w) - g(z) = g'(c)(w-z)\) para algún
+\(c\) entre \(w\) y \(z\). Luego
+\(|g(w) - g(z)| = |g'(c)| |w-z| \leq \lambda |w - z|\).
+
+\_
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Por contradicción. Supongo que existen dos soluciones \(\alpha\) y
+  \(\beta\). Luego \(\alpha = g(\alpha)\) y \(\beta = g(\beta)\).
+  Restando miembro a miembro tengo que
+  \(\alpha - \beta = g(\alpha) - g(\beta)\) lo cual implica que
+  \(|\alpha - \beta| \leq \lambda |\alpha - \beta|\). Luego
+  \((1 - \lambda)|\alpha - \beta| \leq 0\), y como \(0 < \lambda < 1\)
+  tenemos que \(\alpha = \beta\) y \(x = g(x)\) tiene única solución el
+  \([a,b]\).
+\item
+  La propiedad
+  \(a \leq x \leq b \ensuremath{\quad\Longrightarrow\quad}a \leq g(x) \leq b\)
+  implica que dado \(x_0 \in [a,b]\), las iteraciones \(x_k \in [a,b]\).
+  Luego para demostrar que las iteraciones convergen, restar
+  \(x_{n+1} = g(x_n)\) de \(\alpha = g(\alpha)\), obteniendo
+  \(\alpha - x_{n+1} = g(\alpha) - g(x_{n+1}) = g'(cn)(\alpha - x_n)\)
+  para algún \(cn\) entre \(\alpha\) y \(x_n\). Luego
+  \(|\alpha - x_{n+1}| \leq \lambda |\alpha - x_n|\) \textbf{(A)}. Por
+  inducción obtenemos que
+  \(|\alpha - x_n| \leq \lambda^n |\alpha - x_0|\) \textbf{(B)}. Como
+  \(\alpha < 1\), \(\alpha^n \rightarrow 0\) cuando
+  \(n \rightarrow \infty\), y tenemos que \(x_n \rightarrow \alpha\)
+  cuando \(n \rightarrow \infty\).
+\item
+  Por desigualdad triangular tenemos que
+  \(|\alpha - x_0| \leq |\alpha - x_1| + |x_1 - x_0|\), luego aplicamos
+  \textbf{(A)} con \(n = 0\) obtenemos
+  \(|\alpha - x_0| \leq \lambda |\alpha - x_0| + |x_1 - x_0|\) de donde
+  despejamos \(|\alpha - x_0| \leq |x_1 - x_0| / (1 - \lambda)\).
+  Multiplicando ambos lados por \(\lambda^n\) obtenemos
+  \(|\alpha - x_0| \leq \lambda^n(x_0 - x_1) / (1-\lambda)\) y aplicando
+  \textbf{(B)} obtenemos el resultado buscado.
+\item
+  Vimos que \(\alpha - x_{n+1} = g'(cn)(\alpha - x_n)\) para algún
+  \(cn\) entre \(\alpha\) y \(x_n\). Luego
+  \(\ensuremath{\lim_{n \to \infty} (\alpha - x_{n+1})/(\alpha - x_n)} = \ensuremath{\lim_{n \to \infty} g'(cn)} = g'(\alpha)\)
+  ya que \(x_n \rightarrow \alpha\) cuando \(n \rightarrow \infty\).
+\end{enumerate}
+
+\Corolario suponga que \(x = g(x)\) tiene una solución \(\alpha\) y
+suponga que \(g\) y \(g'\) son continuas en un intervalo alrededor de
+\(\alpha\). Luego:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Si \(|g'(\alpha)| < 1\), entonces la iteración \(x_{n+1} = g(x_n)\)
+  converge a \(\alpha\) para \(x_0\) suficientemente cercano a
+  \(\alpha\).
+\item
+  Si \(|g'(\alpha)| > 1\), entonces la iteración \(x_{n+1} = g(x_n)\) no
+  converge a \(\alpha\).
+\item
+  Si \(|g'(\alpha)| = 1\), no se pueden sacar conclusiones.
+\end{enumerate}
+
+\Demostracion 
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Vimos que \(\alpha - x_{n+1} = g'(cn)(\alpha - x_n)\) para algún
+  \(cn\) entre \(\alpha\) y \(x_n\). Luego
+  \(|\alpha - x_{n+1}| = |g'(cn)| |\alpha - x_n|\). Siendo \(g'(x)\)
+  continua y \(|g'(\alpha)| < 1\), existe \(\epsilon > 0\) tal que
+  \(|g'(x)| < 1\) para todo
+  \(x \in [\alpha - \epsilon, \alpha + \epsilon]\). Luego \(cn\) también
+  pertenece a \([\alpha - \epsilon, \alpha + \epsilon]\) y
+  \(|g'(cn)| < 1\). Por lo tanto \(x_{n+1}\) está más próximo a
+  \(\alpha\) que \(x_n\), por lo que la iteración converge a \(\alpha\).
+\item
+  Vimos que \(\alpha - x_{n+1} = g'(cn)(\alpha - x_n)\) para algún
+  \(cn\) entre \(\alpha\) y \(x_n\). Luego
+  \(|\alpha - x_{n+1}| = |g'(cn)| |\alpha - x_n|\). Siendo \(g'(x)\)
+  continua y \(|g'(\alpha)| > 1\), existe \(\epsilon > 0\) tal que
+  \(|g'(x) > 1|\) para todo
+  \(x \in [\alpha - \epsilon, \alpha + \epsilon]\). Luego \(cn\) también
+  pertenece a \([\alpha - \epsilon, \alpha + \epsilon]\) y
+  \(|g'(cn)| > 1\). Por lo tanto \(x_{n+1}\) está más alejado a
+  \(\alpha\) que \(x_n\), por lo que la iteración no converge a
+  \(\alpha\).
+\end{enumerate}
+
+\hypertarget{sistemas-de-ecuaciones-no-lineales}{%
+\subsubsection{Sistemas de Ecuaciones No
+Lineales}\label{sistemas-de-ecuaciones-no-lineales}}
+
+\[
+S = 
+\begin{cases}
+f_1(x_1, x_2) = 0 \\ 
+f_2(x_1, x_2) = 0
+\end{cases}
+\]
+
+En forma vectorial, \(f(\underline{x}) = \underline{0}\) con
+\(f = [f_1\  f_2]^T\), \(\underline{x} = [x_1\  x_2]^T\) y
+\(\underline{0} = [0\  0]^T\).
+
+\hypertarget{punto-fijo-1}{%
+\paragraph{Punto Fijo:}\label{punto-fijo-1}}
+
+reescribimos \(S\) como \[
+S = 
+\begin{cases}
+x_1^{(n+1)} = g_1(x_1^{(n)}, x_2^{(n)}) \\ 
+x_2^{(n+1)} = g_2(x_1^{(n)}, x_2^{(n)}) 
+\end{cases}
+\]
+
+Usando el método de Newton tenemos: \begin{align*}
+0 &= f_1(x_1^{(0)}, x_2^{(0)}) 
++ (x_1^{(1)} - x_1^{(0)})\frac{\delta f_1}{\delta x_1} (x_1^{(0)}, x_2^{(0)})
++ (x_2^{(1)} - x_2^{(0)})\frac{\delta f_1}{\delta x_2} (x_1^{(0)}, x_2^{(0)}) \\
+0 &= f_2(x_1^{(0)}, x_2^{(0)}) 
++ (x_1^{(1)} - x_1^{(0)})\frac{\delta f_2}{\delta x_1} (x_1^{(0)}, x_2^{(0)})
++ (x_2^{(1)} - x_2^{(0)})\frac{\delta f_2}{\delta x_2} (x_1^{(0)}, x_2^{(0)})
+\end{align*}
+
+Denotamos al Jacobiano de \(f\) como \[
+J =
+\begin{bmatrix}
+\frac{\delta f_1}{\delta x_1} & \frac{\delta f_1}{\delta x_2} \\ 
+\\
+\frac{\delta f_2}{\delta x_1} & \frac{\delta f_2}{\delta x_2} 
+\end{bmatrix}
+\]
+
+Luego, en forma matricial,
+\(\underline{x_0} = [x_1^{(0)}\  x_2^{(0)}]^T\) y
+\(\underline{0} = f(\underline{x_0}) + J(\underline{x_0})(\underline{x_1} - \underline{x_0})\),
+de donde obtenemos que
+\(\underline{x_1} = \underline{x_0} - [J(\underline{x_0})]^{-1} f(\underline{x_0})\)
+si \(J(\underline{x_0})\) es no singular. Finalmente, la iteración
+general del método resulta: \[
+\underline{x_{n+1}} 
+= \underline{x_n} - [J(\underline{x_n})]^{-1}f(\underline{x_n})
+\]
+
+\hypertarget{soluciuxf3n-de-ecuaciones-lineales}{%
+\section{Solución de Ecuaciones
+Lineales}\label{soluciuxf3n-de-ecuaciones-lineales}}
+
+\hypertarget{muxe9todos-directos}{%
+\subsection{Métodos Directos}\label{muxe9todos-directos}}
+
+Consideramos sistemas de \(n\) ecuaciones con \(n\) incógnitas:
+\begin{align*}
+a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n &=  b_1 \\
+a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n &=  b_2 \\
+&\ \vdots \\
+a_{n1} x_1 + a_{n2} x_2 + \cdots + a_{nn} x_n &=  b_n
+\end{align*}
+ En forma matricial es \(Ax = b\) con \(A({ij}) = a_{ij}\).
+
+\Definicion una matriz se dice \emph{plena} si la mayoría de sus
+elementos son \emph{no nulos}. En cambio, se dice \emph{rala} si la
+mayoría de sus elementos son nulos.
+
+\Definicion decimos que una matriz es \emph{p-banda} si existe
+\(p \geq \in \ensuremath{\mathbb{Z}}\) tal que
+\(|i - j| \geq p \ensuremath{\quad\Longrightarrow\quad}a_{ij} = 0\). Si
+\(p = 1\), entonces la matriz es \emph{diagonal}, si \(p = 2\) la matriz
+se dice \emph{tri-diagonal}.
+
+\Definicion dado un sistema \(Ax = b\), si \(b = 0\), decimos que el
+sistema es \emph{homogéneo}. En caso contrario el sistema es \emph{no
+homogéneo}.
+
+\Teorema los siguientes enunciados son equivalentes:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Para cada \(b\), existe una única solución \(x\).
+\item
+  Para cada \(b\), existe una solución \(x\).
+\item
+  El sistema homogéneo \(Ax = 0\) tiene única solución \(x=0\).
+\item
+  \(det(A) \neq 0\)
+\item
+  Existe \(A^{-1}\).
+\end{enumerate}
+
+\hypertarget{regla-de-cramer}{%
+\paragraph{Regla de Cramer}\label{regla-de-cramer}}
+
+considere el sistema \(Ax = b\) con \(det(A) \neq 0\). Luego
+\(x_i = det(A_i) / det(A)\) donde
+\(A_i = [a_1 | \cdots | a_{i-1} | b | a_{i+1} | \cdots | a_n]\).
+
+\hypertarget{matriz-inversa}{%
+\subsubsection{Matriz Inversa}\label{matriz-inversa}}
+
+\Definicion sea \(A \in \ensuremath{\mathbb{R}}^{n \times n}\). Decimos
+que \(A^{-1}\) es la \emph{inversa de A} si \(AA^{-1} = A^{-1}A = I\).
+Si \(A^{-1}\) existe, es única. Luego, un sistema \(Ax = b\) puede
+resolverse haciendo \(x = A^{-1}b\), aunque esto es muy ineficiente.
+
+\hypertarget{eliminaciuxf3n-de-gauss}{%
+\subsubsection{Eliminación de Gauss}\label{eliminaciuxf3n-de-gauss}}
+
+Consiste en 2 pasos: \emph{eliminación de incógnitas} y
+\emph{sustitución regresiva}.
+
+\[
+[A^{(1)} | b^(1)] = 
+\left[ 
+\begin{array}{c c c | c}
+a_{11}^{(1)} & \cdots & a_{1n}^{(1)} & b_1^{(1)} \\ 
+\vdots & & \vdots & \vdots \\
+a_{n1}^{(1)} & \cdots & a_{nn}^{(1)} & b_n^{(1)}
+\end{array} 
+\right]
+\quad
+\stackrel{\text{reduce en (n-1) pasos a}}{\longrightarrow}
+\quad
+[A^{(n)} | b^(n)] = 
+\left[ 
+\begin{array}{c c c | c}
+a_{11}^{(1)} & \cdots & a_{1n}^{(1)} & b_1^{(1)} \\ 
+& \ddots & \vdots & \vdots \\
+0 & & a_{nn}^{(n)} & b_n^{(n)}
+\end{array} 
+\right]
+\]
+
+Denotamos \(U = A^{(n)}\) y \(g = b^{(n)}\), luego \(Ux = g\).
+
+\hypertarget{paso-k-uxe9simo}{%
+\paragraph{Paso k-ésimo:}\label{paso-k-uxe9simo}}
+
+suponga que para \(i = 1, ..., k-1\) los \(x_i\) ya han sido eliminados
+de las ecuaciones \(i+1, ..., n\). Eliminamos \(x_k\) de las ecuaciones
+\(k+1, ..., n\). \[
+E_i^{(k+1)} = E_i^{(k)} - m_{ik} E_k^{(k)} \quad (\text{con } i = k+1, ..., n)
+\]
+
+Donde \(m_{ik} = a_{ik}^{(k)} / a_{kk}^{(k)}\). Se llama a \(a_{kk}\) el
+\emph{elemento pivote}.
+
+Una vez obtenida la matriz triangular superior \(A^{(n)} = U\)
+resolvemos por sustitución regresiva. \begin{align*}
+x_n &= \frac{b_n^{(n)}}{a_{nn}^{(n)}} \\
+x_i &= \frac{1}{a_{ii}^{(i)}} 
+  \left(  b_i^{(i)} - \sum_{j=i+1}^n a_{ij}^{(i)} x_j \right)
+\end{align*}
+
+\hypertarget{pivoteo}{%
+\subsubsection{Pivoteo}\label{pivoteo}}
+
+Si \(a_{kk}^{(k)} = 0\), se debe examinar los elementos \(a_{ik}^{(k)}\)
+en las filas \(E_i^{(k)}\) con \(i = k+1, ..., n\). Siendo \(A\) no
+singular, al menos uno de dichos elementos es no nulo. Luego esta fila
+puede intercambiarse con \(E_k^{(k)}\).
+
+\hypertarget{pivoteo-parcial}{%
+\paragraph{Pivoteo Parcial}\label{pivoteo-parcial}}
+
+en el paso \(k\) calcular \(c = \max_{k \leq i \leq n} |a_{ik}^{(k)}|\).
+Si \(|a_{kk}^{(k)}| < c\) luego intercambiar la ecuación \(E_k^{(k)}\)
+por aquella correspondiente a \(c\). Esto reduce errores debido a la
+supresión de cifras significativas.
+
+\hypertarget{muxe9todo-de-gauss-jordan}{%
+\paragraph{Método de Gauss-Jordan}\label{muxe9todo-de-gauss-jordan}}
+
+Transforma \([A | b] \longrightarrow [I | x]\). Requiere un mayor número
+de operaciones que la eliminación de Gauss.
+
+\hypertarget{factorizaciuxf3n-lu}{%
+\subsubsection{Factorización LU}\label{factorizaciuxf3n-lu}}
+
+Queremos resolver \(Ax = b\). Mediante eliminación de Gauss sin pivoteo
+obtenemos \(Ux = g\), donde \[
+U = 
+\begin{bmatrix}
+u_{11} & u_{12} & \cdots & u_{1n} \\
+0 & u_{22} & \cdots & u_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & u_{nn}
+\end{bmatrix}
+, \quad \text{con } u_{ij} = a_{ij}^{(i)}
+\]
+
+Además introducimos la matriz auxiliar \(L\) triangular inferior basada
+en los coeficientes \(m_{ik} = a_{ij}^{(k)} / a_{kk}^{(k)}.\) \[
+L = 
+\begin{bmatrix}
+1 & 0 & \cdots & 0 \\
+m_{21} & 1 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+m_{n1} & m_{n2} & \cdots & 1
+\end{bmatrix}
+\]
+
+\Teorema sea \(A \in \ensuremath{\mathbb{R}}^{n \times n}\) una matriz
+no singular, y sean \(L\) y \(U\) las matrices definidas anteriormente.
+Luego, si \(U\) es generada sin pivoteo se tiene \(A = LU\).
+
+\_
+
+Luego resolver \(Ax = b\) es igual a resolver \(LUx = b\), lo cual es
+equivalente a resolver dos sistemas triangulares. \begin{align*} 
+Lg &= b \rightarrow
+\text{sist. triangular inferior} \rightarrow
+\text{sustitución hacia adelante} \\ 
+Ux &= g \rightarrow 
+\text{sist. triangular superior} \rightarrow
+\text{sustitución hacia atrás}
+\end{align*}
+
+\hypertarget{factorizaciuxf3n-lu-con-matriz-de-permutaciuxf3n}{%
+\subsubsection{Factorización LU con Matriz de
+Permutación}\label{factorizaciuxf3n-lu-con-matriz-de-permutaciuxf3n}}
+
+\Definicion una \emph{matriz de permutación}
+\(P \in \ensuremath{\mathbb{R}}^{n \times n}\) es una matriz con
+exactamente una entrada unitaria en cada fila y cada columna, siendo el
+resto de las entradas nulas.
+
+\hypertarget{propiedad}{%
+\paragraph{Propiedad:}\label{propiedad}}
+
+si \(P\) es una matriz de permutación, entonces existe \(P^{-1}\) y
+\(P^{-1} = P^T\).
+
+\_
+
+Ahora para resolver \(Ax = b\) donde \(A\) requiere pivoteo, podemos
+resolver \(PA = LU\) donde \(P\) incluye los intercambios de filas
+requeridos por \(A\), y luego resolver \(Lg = Pb\) y \(Ux = g\) como se
+mostró antes.
+
+\hypertarget{unicidad-de-la-factorizaciuxf3n-lu}{%
+\paragraph{Unicidad de la Factorización
+LU:}\label{unicidad-de-la-factorizaciuxf3n-lu}}
+
+si \(A\) es tal que la eliminación de Gauss debe realizarse \emph{sin
+pivoteo}, luego \(A\) puede factorizarse en \(A = LU\) y dicha
+factorización es única.
+
+\Definicion una matriz \(A \in \ensuremath{\mathbb{R}}^{n \times n}\) es
+\emph{estrictamente diagonal dominante} si \[
+|a_{ii}| > \sum_{j=1\  j\neq i}^n  |a_{ij}|, \quad \forall i \in 1..n
+\]
+
+\Teorema una matriz \(A\) diagonal dominante es no singular. Luego, el
+sistema \(Ax=b\) puede resolverse por eliminación de Gauss sin pivoteo.
+
+\hypertarget{matrices-simuxe9tricas}{%
+\subsubsection{Matrices Simétricas}\label{matrices-simuxe9tricas}}
+
+\Definicion una matriz \(A\) es \emph{simétrica} si \(A = A^T\). Toda
+matriz simétrica posee \emph{autovalores reales}.
+
+\Definicion una matriz es \emph{definida positiva} si es simétrica y sus
+autovalores son todos positivos. Una matriz es \emph{semidefinida
+positiva} si es simétrica y sus autovalores son todos no negativos.
+
+\Teorema para matrices reales simétricas los siguientes enunciados son
+equivalentes y sirven como definición de matriz \emph{definida
+positiva}.
+
+\begin{itemize}
+\tightlist
+\item
+  Para todo \(x \neq 0\), \(x^T A x > 0\).
+\item
+  Todos los autovalores de \(A\) son positivos.
+\item
+  \(A = B^T B\) para alguna matriz \(B\) no singular. \(B\) no es única
+  pero existe una única matriz triangular superior \(R\) con elementos
+  diagonales positivos tal que \(A = R^T R\) (factorización de
+  Cholesky).
+\end{itemize}
+
+\hypertarget{matrices-no-simuxe9tricas-reales}{%
+\subsubsection{Matrices No Simétricas
+Reales}\label{matrices-no-simuxe9tricas-reales}}
+
+Toda matriz no simétrica \(A\) puede expresarse como \(A = M + C\)
+donde:
+
+\begin{itemize}
+\tightlist
+\item
+  \(M = \frac{1}{2} (A + A^T)\) es una matriz simétrica.
+\item
+  \(C = \frac{1}{2} (A - A^T)\) es una matriz antisimétrica.
+\end{itemize}
+
+\hypertarget{nota}{%
+\paragraph{Nota}\label{nota}}
+
+para toda matriz antisimétrica \(C\) y
+\(x \in \ensuremath{\mathbb{R}}^n\) se cumple \(x^T C x = 0\).
+
+\Definicion (extensión de matriz definida positiva a matrices no
+simétricas)
+
+\(A\) es definida positiva \sii la matriz simétrica
+\(M = \frac{1}{2} (A + A^T)\) es definida positiva.
+
+\hypertarget{ortogonalizaciuxf3n-de-gram-schmidt}{%
+\subsubsection{Ortogonalización de
+Gram-Schmidt}\label{ortogonalizaciuxf3n-de-gram-schmidt}}
+
+Sea \(\beta = \{x_1, x_2, ..., x_n\}\) una base arbitraria, no
+necesariamente ortogonal de un espacio \(n\)-dimensional \(S\). El
+objetivo es \emph{construir una base ortonormal}
+\(O = \{u_1, u_2, ..., u_n\}\) de \(S\). La estrategia consta de
+construir \(O\) secuencialmente de manera que
+\(O_k = \{u_1, u_2, ..., u_k\}\) es una base ortonormal de
+\(S_k = span\{x_1, x_2, ..., x_k\}\) para \(k = 1,...,n\).
+
+\hypertarget{algoritmo-1}{%
+\paragraph{Algoritmo:}\label{algoritmo-1}}
+
+\[
+u_1 = \frac{x_1}{||x_1||}, \qquad w_k = x_k - \sum_{i=1}^{k-1} (x_k^T u_i) u_i,
+   \qquad u_k = \frac{w_k}{||w_k||}
+\]
+
+\hypertarget{factorizaciuxf3n-qr}{%
+\subsubsection{Factorización QR}\label{factorizaciuxf3n-qr}}
+
+Sea
+\(A \in \ensuremath{\mathbb{R}}^{m \times n}, A = [a_1 | a_2 | ... |a_n]\)
+una matriz con columnas linealmente independientes. Aplicando
+Gram-Schmidt resulta una base ortonormal \({q_1, q_2, ..., q_n}\) de
+\(span\{A\}\) donde: \begin{align*}
+q_k &= \frac{a_k - \sum_{i=1}^{k-1} (a_k^T q_i) q_i}{\sqcup_k} \\
+\sqcup_k &= \left\| a_k - \sum_{i=1}^{k-1} (a_k^T q_i) q_i \right\|
+\end{align*}
+
+En forma matricial tenemos: \[
+\underbrace{[a_1 | a_2 | ... | a_n]}_{A}
+=
+\underbrace{[q_1 | q_2 | ... | q_n]}_{Q}
+\underbrace{
+  \begin{bmatrix}
+  \sqcup_1 & a_2^T q_1 & a_3^T q_1 & \cdots & a_n^T q_1 \\ \\
+  0        & \sqcup_2  & a_3^T q_2 & \cdots & a_n^T q_2 \\ \\
+  0        & 0         & \sqcup_3  & \cdots & a_n^T q_3 \\ \\
+  \vdots   & \vdots    & \vdots    & \ddots & \vdots    \\ \\
+  0        & 0         & 0         & \cdots & \sqcup_n  
+  \end{bmatrix}}_{R}
+\]
+
+Donde:
+
+\begin{itemize}
+\tightlist
+\item
+  \(A \in \ensuremath{\mathbb{R}}^{m \times n}\) es una matriz de
+  columnas LI.
+\item
+  \(Q \in \ensuremath{\mathbb{R}}^{m \times n}\) es una base ortonormal
+  de \(span\{A\}\).
+\item
+  \(R \in \ensuremath{\mathbb{R}}^{n \times n}\) es una matriz
+  triangular superior con elementos diagonales positivos.
+\end{itemize}
+
+\_
+
+Toda matriz \(A \in \ensuremath{\mathbb{R}}^{m \times n}\) \emph{con
+columnas LI} puede factorizarse de manera única como \(A = QR\). Además,
+si \(A \in \ensuremath{\mathbb{R}}^{n \times n}\) es no singular,
+entonces \(Q^T = Q^{-1}\). Luego
+\(Ax = b \ensuremath{\quad\Longleftrightarrow\quad}QRx = b \ensuremath{\quad\Longleftrightarrow\quad}Rx = Q^T b\),
+y este último es un sistema que se resuelve por sustitución regresiva.
+
+\hypertarget{problema-de-muxednimos-cuadrados}{%
+\subsubsection{Problema de Mínimos
+Cuadrados}\label{problema-de-muxednimos-cuadrados}}
+
+En puntos discretos \(t_i\) obtenemos observaciones \(b_i\), resultando
+un conjunto de pares ordenados \(\{(t_1, b_1), ..., (t_m, b_m)\}\).
+Supongamos que queremos aproximar los datos mediante una ecuación lineal
+\(y = f(t) = \alpha + \beta t\). Tenemos que el error de aproximar cada
+punto es \(\epsilon_i = |f(t_i) - b_i| = | \alpha + \beta t_i - b_i|\).
+Luego en forma matricial \(\epsilon = Ax - b\) (con \(A = [1 | t]\) y
+\(x = [\alpha\  \beta]^T\)) y queremos hallar los valores de \(\alpha\)
+y \(\beta\) que minimicen el error al cuadrado
+\(\sum_{i=1}^m \epsilon_i^2 = \epsilon^T \epsilon\).
+
+\hypertarget{problema-de-muxednimos-cuadrados-general}{%
+\paragraph{Problema de mínimos cuadrados
+general:}\label{problema-de-muxednimos-cuadrados-general}}
+
+para \(A \in \ensuremath{\mathbb{R}}^{m \times n}\) y
+\(\b \in \ensuremath{\mathbb{R}}^m\), sea
+\(\epsilon = \epsilon(x) = A x - b\). El problema de los mínimos
+cuadrados es el de hallar un vector \(x\) que minimice
+\(\sum_{i=1}^m \epsilon^2 = \sum_{i=1}^m \epsilon \epsilon^T = (Ax - b)^T (Ax - b)\).
+
+\Teorema el conjunto solución del problema de mínimos cuadrados es el
+conjunto de soluciones del sistema \(A^T Ax = A^T b\). Además, existe
+una única solución \sii \(rank(A) = n\), en cuyo caso
+\(x = (A^T A)^{-1}A^T b\).
+
+\hypertarget{aplicando-factorizaciuxf3n-qr-al-problema-de-muxednimos-cuadrados}{%
+\paragraph{Aplicando factorización QR al problema de mínimos
+cuadrados:}\label{aplicando-factorizaciuxf3n-qr-al-problema-de-muxednimos-cuadrados}}
+
+El conjunto solución de mínimos cuadrados es el conjunto solución del
+sistema \(A^T Ax = A^T b\). Suponga que \(rank(A^{m \times n}) = n\) y
+sea \(A = QR\) Luego
+\(A^T A = (QR)^T QR = R^T Q^T Q R = R^T Q^{-1} Q R = R^T R\). Por lo
+tanto \(R^T Rx = R^T Q^T b\). Siendo \(R\) no singular nos queda
+\(Rx = Q^T b\) lo cual se resuelve por sustitución regresiva. Siendo
+\(x = R^{-1} Q^T b = (A^T A)^{-1} A^T b\). Si el sistema es consistente,
+la ecuación anterior da como resultado la solución \(Ax - b = 0\). Si no
+lo es, da la solución de mínimos cuadrados.
+
+\hypertarget{normas-vectoriales-y-matriciales}{%
+\subsubsection{Normas Vectoriales y
+Matriciales}\label{normas-vectoriales-y-matriciales}}
+
+\Definicion dado un espacio vectorial \(V\), una función
+\(||\cdot|| : V \rightarrow \ensuremath{\mathbb{R}}\) es una \emph{norma
+vectorial} si satisface las siguientes propiedades:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\forall x \in V, ||x|| \geq 0 \qquad (||x|| = 0 \ensuremath{\quad\Longleftrightarrow\quad}x = 0)\)
+\item
+  \(\forall x \in V, \lambda \in \ensuremath{\mathbb{R}}, ||\lambda x|| = |\lambda| ||x||\)
+\item
+  \(\forall x,y \in V, ||x+y|| \leq ||x|| + ||y||\)
+\end{enumerate}
+
+\hypertarget{norma-eucluxeddea}{%
+\paragraph{Norma Euclídea:}\label{norma-eucluxeddea}}
+
+\(||x||_2 = sqrt(x^T x)\)
+
+\hypertarget{norma-infinito}{%
+\paragraph{Norma Infinito:}\label{norma-infinito}}
+
+\(||x||_\infty = max |x_i|\)
+
+\hypertarget{norma-l1}{%
+\paragraph{Norma l1:}\label{norma-l1}}
+
+\(||x||_1 = \sum |x_i|\)
+
+\hypertarget{normas-matriciales-para-a-in-ensuremathmathbbrm-times-n}{%
+\paragraph{\texorpdfstring{Normas Matriciales para
+\(A \in \ensuremath{\mathbb{R}}^{m \times n}\):}{Normas Matriciales para A \textbackslash{}in \textbackslash{}ensuremath\{\textbackslash{}mathbb\{R\}\}\^{}\{m \textbackslash{}times n\}:}}\label{normas-matriciales-para-a-in-ensuremathmathbbrm-times-n}}
+
+\begin{itemize}
+\tightlist
+\item
+  \(||A|| = 0 \ensuremath{\quad\Longleftrightarrow\quad}A = 0\)
+\item
+  \(\forall \lambda \in \ensuremath{\mathbb{R}}, ||\lambda A|| = |\lambda| ||A||\)
+\item
+  \(\forall A,B, ||A+B|| \leq ||A|| + ||B||\)
+\end{itemize}
+
+\Definicion para una matriz cuadrada \(A\), se dice que la norma
+matricial \(||\cdot||\) es \emph{submultiplicativa} si
+\(\forall A, B, ||AB|| \leq ||A|| \cdot ||B||\).
+
+\Definicion dada una norma vectorial se define la \emph{norma matricial
+inducida} para \(A \in \ensuremath{\mathbb{R}}^{m \times n}\) como
+\(||A|| = sup\{ ||Ax|| / ||x|| : x \neq 0, x \in \ensuremath{\mathbb{R}}^n \}\).
+
+\Teorema la norma matricial inducida es submultiplicativa.
+
+\Teorema sea \(||\cdot||\) una norma vectorial, luego
+\(\forall x \in \ensuremath{\mathbb{R}}^n, || Ax || \leq ||A|| \cdot ||x||\).
+
+\Demostracion para \(x=0\) se verifica trivialmente. Luego supongo
+\(x \neq 0\) y sea \(v = x / ||x||\) y \(||v|| = 1\). Se tiene
+\[ || Ax || = \left\| A x \frac{||x||}{||x||} \right\|
+= ||x|| \cdot ||Av|| \leq ||x|| \cdot ||v|| \cdot ||A|| = ||x|| \cdot ||A||
+\]
+
+\hypertarget{estabilidad-de-la-resoluciuxf3n-de-sistemas-lineales}{%
+\subsubsection{Estabilidad de la Resolución de Sistemas
+Lineales}\label{estabilidad-de-la-resoluciuxf3n-de-sistemas-lineales}}
+
+Considerar el sistema \(Ax = b\) y el sistema perturbado
+\(A \tilde{x} = \tilde{b}\).
+
+\Teorema sea \(A \in \ensuremath{\mathbb{R}}^{n \times n}\) no singular.
+Luego las soluciones de \(Ax = b\) y \(A \tilde{x} = \tilde{b}\)
+satisfacen \[
+\frac{||x - \tilde{x}||}{||x||} 
+\leq ||A|| \cdot ||A^{-1}|| \cdot \frac{||b - \tilde{b}||}{||b||}
+\]
+
+\Demostracion tenemos que \(A x - A \tilde{x} = b - \tilde{b}\), y como
+\(A\) es no singular obtenemos
+\(x - \tilde{x} = A^{-1} (b - \tilde{b})\). Luego, usando la propiedad
+anterior obtenemos
+\(||x - \tilde{x}|| \leq ||A^{-1}|| \cdot ||b - \tilde{b}||\). Dividimos
+cada lado por \(||x||\) obteniendo
+\(||x - \tilde{x}|| / || x|| \leq ||A^{-1}|| \cdot ||b - \tilde{b}||/||x||\).
+Luego
+\(||x - \tilde{x}||/|| x|| \leq ||A|| \cdot ||A^{-1}|| \cdot ||b - \tilde{b}|| / (||A|| \cdot ||x||)\)
+y como \(||b|| = ||Ax|| \leq ||A|| \cdot ||x||\) llegamos al resultado
+buscado.
+
+\hypertarget{nota-1}{%
+\paragraph{Nota:}\label{nota-1}}
+
+El número \(||A||\cdot||A^{-1}||\) se conoce como el \emph{número de
+condición} de \(A\) (\(K(A)\)), y de lo anterior se desprende que: \[
+\frac{||\Delta x||}{||x + \Delta x||} \leq K(A) \frac{||\Delta A||}{||A||}
+\]
+
+\Lema \(K(A) \geq 1\)
+
+\Demostracion \(1 = ||I|| = ||AA^{-1}|| \leq ||A|| \cdot ||A^{-1}|| = K(A)\).
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\hypertarget{muxe9todos-iterativos}{%
+\subsection{Métodos Iterativos}\label{muxe9todos-iterativos}}
+
+\begin{itemize}
+\tightlist
+\item
+  Generan una sucesión \(\{x^{(k)}\}\) que converge a la solución.
+\item
+  Para \(n\) grande, la eliminación de Gauss requiere \(\frac{2}{3}n^3\)
+  operaciones, mientras que los métodos iterativos requieren
+  \(\approx n^2\).
+\end{itemize}
+
+\hypertarget{esquema-general-de-los-muxe9todos-iterativos}{%
+\subsubsection{Esquema general de los Métodos
+Iterativos}\label{esquema-general-de-los-muxe9todos-iterativos}}
+
+Sea \(A \in \ensuremath{\mathbb{R}}^{n \times n}\), \(Ax = b\) el
+sistema a resolver. Sea \(N \in \ensuremath{\mathbb{R}}^{n \times n}\)
+no singular. Luego \(N x = N x - A x + b\), de donde obtenemos un
+proceso iterativo de la forma \(N x^{(k+1)} = (N - A) x^{(k)} + b\), de
+donde obtenemos \(x^{(k+1)} = (I - N^{-1} A) x^{(k)} + N^{-1} b\) y
+solución del sistema cumple que \(x = (I - N^{-1} A) x + N^{-1} b\).
+
+\_
+
+Si \(A = L + D + U\), luego:
+
+\begin{itemize}
+\tightlist
+\item
+  El \emph{método de Jacobi} utiliza \(N = D\).
+\item
+  El \emph{método de Gauss-Seidel} utiliza \(N = L + D\).
+\end{itemize}
+
+\hypertarget{error-de-aproximaciuxf3n}{%
+\paragraph{Error de aproximación:}\label{error-de-aproximaciuxf3n}}
+
+\(e^{(k)} = x - x^{(k)}\) y restando \(x = (I - N^{-1} A) x + N^{-1} b\)
+y \(x^{(k+1)} = I - N^{-1} A) x^{(k)} + N^{-1} b\) obtenemos
+\(e^{(k+1)} = (I - N^{-1} A) e^{(k)}\).
+
+\Teorema si \(||I - N^{-1} A|| < 1\) entonces la sucesión
+\(\{x^{(k)}\}\) converge a la solución del sistema \(Ax = b\) para
+cualquier estimación inicial \(x^{(0)}\).
+
+\Demostracion
+
+\begin{align*}
+|| e^{(k+1)} || = || (I - N^{-1} A) e^{(k)} ||
+& \leq || I - N^{-1} A || \cdot || e^{(k)} || \\
+& \leq || I - N^{-1} A || \cdot || (I - N^{-1} A) e^{(k-1)} ||
+= || I - N^{-1} A ||^2 \cdot || e^{(k-1)} || \\
+& \leq \ \cdots\ \leq || I - N^{-1} A ||^{k+1} \cdot || e^{(0)} || \\
+\end{align*}
+
+Como además sabemos que \(|| I - N^{-1} A || < 1\), luego
+\(||I - N^{-1} A||^{k+1} \rightarrow 0\) cuando
+\(k \rightarrow \infty\). Finalmente
+\(\ensuremath{\lim_{k \to \infty} ||e^{(k+1)||}} = 0 \ensuremath{\quad\Longrightarrow\quad}x^{(\infty)} \rightarrow x\).
+
+\hypertarget{estabilidad-asintuxf3tica-de-un-sistema-lineal-discreto}{%
+\subsubsection{Estabilidad Asintótica de un Sistema Lineal
+Discreto}\label{estabilidad-asintuxf3tica-de-un-sistema-lineal-discreto}}
+
+\Teorema sea \(B \in \ensuremath{\mathbb{R}}^{n \times n}\). El proceso
+iterativo \(x^{(k+1)} = Bx^{(k)}\) converge a
+\(\underline{x} = \underline{0}\) para todo valor inicial \(x^{(0)}\)
+\sii \(\rho(B) < 1\), donde \(\rho(B)\) es el \emph{radio espectral} de
+\(B\) (\(max |\lambda_i|\)).
+
+\Corolario la fórmula de iteración \(N x^{(k+1)} = (N-A)x^{(k)} + b\)
+dará lugar a una sucesión que converge a la solución del sistema
+\(Ax = b\) para cualquier \(x^{(0)}\) \sii \(\rho(I - N^{-1} A) < 1\).
+
+\Teorema si la matriz \(A\) es diagonal dominante, luego la sucesión
+\(\{x^{(k)}\}\) generada por el método de Jacobi converge a la solución
+del sistema \(Ax = b\) para todo \(x^{(0)}\) inicial.
+
+\Teorema si la matriz \(A\) es diagonal dominante, luego la sucesión
+\(\{x^{(k)}\}\) generada por el método de Gauss-Seidel converge a la
+solución del sistema \(Ax = b\) para todo \(x^{(0)}\) inicial.
+
+\hypertarget{muxe9todo-de-sobrerelajaciuxf3n-sor}{%
+\subsubsection{Método de Sobrerelajación
+(SOR)}\label{muxe9todo-de-sobrerelajaciuxf3n-sor}}
+
+Este método permite mejorar la convergencia usando relajación. La
+relajación representa una ligera modificación del método de Gauss-Seidel
+y ésta permite mejorar la convergencia en algunos casos. Después de que
+se calcula cada nuevo valor de x, ése valor se modifica mediante un
+promedio ponderado de los resultados de las iteraciones anterior y
+actual. \[
+x_i^{(k+1)} = (1-\omega) x_i^{(k)} 
++ \frac{\omega}{a_{ii}}\left( b_i - \sum_{j=1}^{i-1} a_{ij} x_j^{(k+1)} -
+  \sum_{j=i+1}^{i-1} a_{ij} x_j^{(k)} \right) 
+\]
+
+Donde \(\omega\) es el factor de relajación:
+
+\begin{itemize}
+\tightlist
+\item
+  Si \(\omega = 1\), tenemos el método de Gauss-Seidel
+\item
+  Si \(0 < \omega < 1\), tenemos el método de Subrelajación (útil cuando
+  Gauss-Seidel no converge).
+\item
+  Si \(\omega > 1\), tenemos el método de Sobrerelajación (acelera la
+  velocidad de convergencia cuando Gauss-Seidel converge).
+\end{itemize}
+
+\_
+
+Si reescribimos la ecuación anterior, obtenemos: \[
+a_{ii} x_i^{(k+1)} + \omega \sum_{j=1}^{i-1} a_{ij} x_j^{(k+1)} 
+= (1-\omega) a_{ii} x_i^{(k)} - \omega \sum_{j=i+1}^{i-1} a_{ij} x_j^{(k)} 
++ \omega b_i
+\]
+
+En forma matricial: \[
+(D + \omega L)x^{(k+1)} = [(1-\omega) D - \omega U]x^{(k)} + \omega b
+\]
+
+Luego, si existe \((D + \omega L)^{-1}\), entonces
+\(x^{(k+1)} = T_{\omega} x^{(k)} + C_{\omega}\), donde
+\(T_{\omega} = (D + \omega L)^{-1}[(1 - \omega)D - \omega U]\) y
+\(C_{\omega} = \omega (D + \omega L)^{-1} b\). Luego el error está dado
+por \(e^{(k+1)} = T_{\omega} e^{(k)}\), de donde se desprende que el
+método SOR converge a la solución del \(Ax = b\) para todo valor inicial
+\sii \(\rho(T_{\omega}) < 1\).
+
+\Teorema sea \(A \in \ensuremath{\mathbb{R}}^{n \times n}\), luego
+\(\rho(A) \leq ||A||\) para cualquier norma matricial submultiplicativa.
+
+\Demostracion sea \((\lambda, v)\) un par autovalor-autovector de \(A\)
+y
+\(\underline{X} = [v\  |\  0\  |\  ...\  |\  0] \in \ensuremath{\mathbb{R}}^{n \times n}\).
+Luego \(\lambda \underline{X} = A \underline{X}\), de donde tenemos que
+\(|\lambda|\cdot||\underline{X}|| = ||\lambda \underline{X}|| = ||A \underline{X}|| \leq ||A|| \cdot ||\underline{X}||\).
+Luego \(|\lambda| \leq||A||\) para todo \(\lambda \in \sigma(A)\)
+(espectro de \(A\)), por lo tanto \(\rho(A)\leq|| A ||\).
+
+\hypertarget{aproximaciuxf3n-de-autovalores}{%
+\section{Aproximación de
+Autovalores}\label{aproximaciuxf3n-de-autovalores}}
+
+\Definicion sea \(A \in \ensuremath{\mathbb{R}}^{n \times n}\). Si
+existe un número \(\lambda\) y un vector \(v \neq 0\) tales que
+\(A v = \lambda v\) decimos que \(\lambda\) es un \emph{autovalor} de
+\(A\) y que \(v\) es un \emph{autovector} de \(A\). Además, si \(v\) es
+un autovector de \(A\), luego \(\alpha v\) es un autovector de \(A\)
+para cualquier \(\alpha \in \ensuremath{\mathbb{R}}\neq 0\).
+
+\hypertarget{cuxf3mo-calcular-lambda-y-v}{%
+\paragraph{\texorpdfstring{¿Cómo calcular \(\lambda\) y
+\(v\)?}{¿Cómo calcular \textbackslash{}lambda y v?}}\label{cuxf3mo-calcular-lambda-y-v}}
+
+Sabemos que \(A v = \lambda v\), luego \((\lambda I - A) v = 0\) (con
+\(v \neq 0\)). Llamamos \emph{polinomio característico de \(A\)} a
+\(f(\lambda) = det(\lambda I - A)\). Además, si
+\(A \in \ensuremath{\mathbb{R}}^{n \times n}\), luego \(f(\lambda)\) es
+un polinomio de grado \(n\).
+
+\Teorema sea \(A \in \ensuremath{\mathbb{R}}^{n \times n}\) una matriz
+simétrica real. Luego existe un conjunto de pares autovalor-autovector
+\({\lambda_i, v^{(i)}}, i=1,...,n\) que satisfacen:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Los autovalores \(\lambda_1, ..., \lambda_n\) son las raíces del
+  polinomio característico de \(A\). Todos son números reales.
+\item
+  Los autovectores \(v{(1)}, ..., v^{(n)}\) \emph{ortogonales} entre si,
+  y pueden elegirse de longitud 1. Es decir, \(v^{(i)T} v^{(j)} = 0\) y
+  \(v^{(i)T} v^{(i)} = 1\).
+\item
+  Para cada vector \(x = [x_1, x_2, ..., x_n]^T\) existe un único vector
+  \(c = [c_1, c_2, ..., c_n]\) tal que
+  \(x = c_1 v^{(1)} + \cdots + c_n v^{(n)}\). Las constantes están dadas
+  por \(c_i = \sum_{j=1}^n x_j v_j^{(i)} = x^T v^{(i)}\) donde
+  \(long(v^{(i)}) = 1\).
+\item
+  Definir la matriz \(U = [v^{(1)}\  v^{(2)}\  \cdots v^{(n)}]\). Luego
+  \(U^T A U = D\) matriz diagonal con \(D_{ii} = \lambda_i\). Además
+  \(U U^T = U^T U = I\), y \(A = U D U^T\).
+\end{enumerate}
+
+\hypertarget{cuxedrculos-de-gerschgoruxedn}{%
+\subsubsection{Círculos de
+Gerschgorín}\label{cuxedrculos-de-gerschgoruxedn}}
+
+\Definicion sea \(A \in \ensuremath{\mathbb{R}}^{n \times n}\), luego
+para \(i=1,...,n\) sean: \[ 
+r_i = \sum_{j=1\  j\neq i}^n |a_{ij}|,
+\qquad \qquad c_i = \{z \in \mathbb{C} : |z - a_{ii}| \leq r_i\} 
+\]
+
+\Teorema sea \(A \in \ensuremath{\mathbb{R}}^{n \times n}\) y sea
+\(\lambda\) un autovalor de \(A\). Luego \(\lambda \in C_i\) para algún
+\(i=1,...,n\).
+
+\Demostracion sea \(\lambda\) un autovalor de \(A\) y \(v\) el
+autovector asociado. Sea \(k\) la componente de \(v\) tal que
+\(|v_k| = ||v||_{\infty}\). Luego: \begin{align*}
+A v = \lambda v 
+& \implica \sum_{j=1}^n a_{kj} v_j 
+= \lambda v_k \quad \text{(k-ésimo componente)} \\
+& \implica \sum_{j=1\ j \neq k}^n a_{kj} v_j + a_{kk} v_k 
+= \lambda v_k \\
+& \implica (\lambda - a_{kk}) v_k 
+= \sum_{j=1\ j\neq k}^n a_{kj} v_j \\
+& \implica |\lambda - a_{kk}| \cdot |v_k| \leq
+\sum_{j=1\ j\neq k}^n |a_{kj}| \cdot |v_j|
+\leq r_k ||v||_{\infty} \\
+& \implica |\lambda - a_{kk}| \leq r_k
+\end{align*}
+
+
+\_
+
+\hypertarget{muxe9todo-de-la-potencia}{%
+\subsubsection{Método de la Potencia}\label{muxe9todo-de-la-potencia}}
+
+Sea \(A \in \ensuremath{\mathbb{R}}^{n \times n}\) una matriz simétrica
+y sean \(\lambda_1,...,\lambda_n\) sus autovalores tal que
+\(|\lambda_1| > |\lambda_2| \geq \cdots \geq |\lambda_n|\), es decir,
+suponemos que existe un único autovalor de módulo máximo. Luego sea
+\(\{v^{(1)},..,v^{(n)}\}\) la base de autovectores correspondiente. Sea
+\(z^{(1)}\) una estimación inicial de \(v^{(1)}\). Definimos: \[
+\omega^{(n+1)} = A z^{(n)},
+\qquad\qquad z^{(n+1)} = \frac{\omega^{(n+1)}}{|| \omega^{(n+1)} ||}
+\]
+
+Entonces resulta que
+\(z^{(n)} \rightarrow v^{(1)} / ||v^{(1)}||_{\infty}\) cuando
+\(n \rightarrow \infty\), y eligiendo una componente \(k\) no nula de
+\(\omega^{(n-1)}\) luego
+\(\lambda^{(n)} = \omega^{(n)} / z_k^{(n-1)} \rightarrow \lambda_1\)
+cuando \(n \rightarrow \infty\).
+
+\hypertarget{interpolaciuxf3n-y-ajuste-de-curvas}{%
+\section{Interpolación y Ajuste de
+Curvas}\label{interpolaciuxf3n-y-ajuste-de-curvas}}
+
+Dados \(n+1\) puntos distintos \(a \leq x_1 < \cdots x_{n+1} \leq b\) de
+un intervalo \([a,b]\), llamados \emph{nodos} de la interpolación, y
+\(n+1\) números reales \(y_1,...,y_{n+1}\) llamados \emph{valores} de la
+interpolación, se trata de hallar una función \(P\) tal que
+\(P(x_i) = y_i,\  i=1,...,n+1\).
+
+\hypertarget{interpolaciuxf3n-polinomial}{%
+\subsubsection{Interpolación
+Polinomial}\label{interpolaciuxf3n-polinomial}}
+
+Dados \(n+1\) puntos \(\{(x_i, y_i)\  :\  y_i = f(x_i), i=0,...,n\}\),
+buscamos encontrar un polinomio \(P(x)\) que interpole los datos, es
+decir que \(P(x_i) = y_i,\  i=1,...,n\).
+
+\Teorema (Existencia y Unicidad del Polinomio Interpolante) dados
+\(n+1\) puntos distintos \((x_0, y_0), (x_1, y_1), ..., (x_n, y_n)\) con
+\(x_0, ..., x_n\) números distintos, \emph{existe} un polinomio \(P(x)\)
+de grado menor o igual a \(n\) que interpola dichos puntos. Además,
+dicho polinomio es \emph{único} en el conjunto de polinomios de grado
+menor o igual a \(n\).
+
+\hypertarget{muxe9todo-de-interpolaciuxf3n-de-lagrange}{%
+\subsubsection{Método de Interpolación de
+Lagrange}\label{muxe9todo-de-interpolaciuxf3n-de-lagrange}}
+
+Consideramos el polinomio de grado máximo \(n\) que pasa por los puntos
+\((x_0, y_0), (x_1, y_1), ..., (x_n, y_n)\). Para \(k=0,...,n\)
+definimos: \[
+L_k(x) = \frac{(x-x_0) \cdots (x-x_{k-1})(x-x_{k+1}) \cdots (x-x_n)}{(x_k-x_0)
+\cdots (x_k-x_{k-1})(x_k-x_{k+1}) \cdots (x_k-x_n)}
+= \prod_{i=0\  i\neq k}^n \frac{(x - x_i)}{(x_k - x_i)}
+\]
+
+Donde \(L_k(x)\) satisface \(L_k(x_k) = 1\) y \(L_k(x_i) = 0\) si
+\(i \neq k\). Luego el polinomio interpolador de Lagrange está dado por:
+\[
+P(x) = L_0(x) y_0 + L_1(x) y_1 + \cdots + L_n(x) y_n
+= \sum_{k=0}^n L_k(x) y_k
+\]
+
+Notar que \(P(x_i) = y_i,\  i=0,...,n\).
+
+\hypertarget{muxe9todo-de-interpolaciuxf3n-por-diferencias-divididas-de-newton}{%
+\subsubsection{Método de Interpolación por Diferencias Divididas de
+Newton}\label{muxe9todo-de-interpolaciuxf3n-por-diferencias-divididas-de-newton}}
+
+Dados los \(n+1\) puntos \((x_0, y_0), (x_1, y_1), ..., (x_n, y_n)\),
+expresar el polinomio interpolador de la forma: \[ 
+P(x) = a_0 + a_1(x-x_0) + a_2(x-x_0)(x-x_1) + \cdots +
+a_n(x-x_0)(x-x_1)\cdots(x-x_{n-1})
+\]
+
+Luego vemos que: \begin{align*}
+P_1(x) &= a_0 + a_1(x-x_0) \\
+P_1(x) &= \underbrace{a_0 + a_1(x-x_0)}_{P_1(x)} + a_2(x-x_0)(x-x_1) \\
+&\vdots \\
+P_n(x) &= P_{n-1}(x) + a_n(x-x_0)\cdots(x-x_{n-1})
+\end{align*}
+
+\hypertarget{imponiendo-las-condiciones-de-interpolaciuxf3n}{%
+\paragraph{Imponiendo las Condiciones de
+Interpolación:}\label{imponiendo-las-condiciones-de-interpolaciuxf3n}}
+
+queremos que \(P_n(x_i) = f(x_i) = y_i,\  i=1,...,n\). Luego:
+\begin{align*}
+P_n(x_0) &= a_0 = y_0 \\
+P_n(x_1) &= y_0 + a_1(x_1-x_0) \implica a_1 = \frac{y_1 - y_0}{x_1 - x_0} \\
+&\vdots \\
+\end{align*} Los coeficientes \(a_i\) se pueden calcular introduciendo
+la idea de \emph{diferencia dividida}.
+
+\begin{itemize}
+\item
+  Diferencia dividida de primer orden:
+  \(f[x_0, x_1] = \frac{f(x_1) - f(x_0)}{(x_1 - x_0)} = (y_1 - y_0) / (x_1 - x_0)\)
+\item
+  Diferencia dividida de segundo orden:
+  \(f[x_0, x_1, x_2] = \frac{f[x_1, x_2] - f[x_0, x_1]}{(x_2 - x_0)}\)
+\item
+  Diferencia dividida de orden \(k\):
+  \(f[x_i,...,x_{i+k}] = \frac{f[x_{i+1},...,x_{i+k}] - f[x_i, x_{i+k-1}]}{(x_{i+k} - x_i)}\)
+\end{itemize}
+
+\hypertarget{propiedad-1}{%
+\paragraph{Propiedad:}\label{propiedad-1}}
+
+sea \((i0, i1,..., in)\) una permutación de los enteros
+\((0, 1,...,n)\), luego se demuestra que
+\(f[x_{i0}, x_{i1},..., x_{in}] = f[x_0, x_1,..., x_n]\).
+
+\hypertarget{fuxf3rmula-de-la-interpolaciuxf3n-por-diferencias-divididas-de-newton}{%
+\paragraph{Fórmula de la Interpolación por Diferencias Divididas de
+Newton}\label{fuxf3rmula-de-la-interpolaciuxf3n-por-diferencias-divididas-de-newton}}
+
+\[ 
+P_n(x) 
+= f(x_0) + (x-x_0)f[x_0, x_1] + \cdots + (x-x_0)\cdots(x-x_{n-1})f[x_0,..., x_n]
+= \sum_{i=0}^n \left( \prod_{j=0}^{i-1} (x - x_j) \right) f[x_0, ..., x_n]
+\]
+
+\Teorema suponga que \(f\) está definida en \([a,b]\) y que
+\(\{x_0, x_1, ..., x_n\}\) sin valores distintos en \([a,b]\). El
+polinomio de grado menor o igual a \(k\) que interpola \(f(x)\) en
+\(\{x_i, ..., x_{i+k}\} \subseteq \{x_0, ..., x_n\}\) está dado por: \[ 
+P_{i,k}(x) = f(x_i) + (x-x_i)f[x_i, x_{i+1}] + \cdots + (x-x_i) \cdots
+(x-x_{i+k-1})f[x_i, ..., x_{i+k}]  
+\]
+
+\Teorema (de Rolle) sea \(f\) continua en \([a,b]\) y diferenciable en
+\((a,b)\). Si \(f(a) = f(b)\), entonces existe \(c \in (a,b)\) tal que
+\(f'(c) = 0\).
+
+\Teorema (generalizado de Rolle) sea \(f\) continua en \([a,b]\) y
+diferenciable \(n\) veces en \((a,b)\). Si \(f(x)\) se anula en los
+\(n+1\) números distintos \(x_0, x_1, ..., x_n \in [a,b]\), entonces
+existe \(c \in (a,b)\) tal que \(f^{(n)}(c) = 0\).
+
+\hypertarget{error-en-la-interpolaciuxf3n-polinomial}{%
+\subsubsection{Error en la Interpolación
+Polinomial}\label{error-en-la-interpolaciuxf3n-polinomial}}
+
+\Teorema sean \(x_0, x_1, ..., x_n \in [a,b]\) números distintos, y sea
+\(f(x)\) diferenciable \(n\) veces en \([a,b]\). Luego para todo
+\(x \in [a,b]\) existe \(\xi(x) \in (a,b)\) tal que: \[
+f(x) - P(x) = \frac{(x-x_0)(x-x_1) \cdots (x-x_n)}{(n+1)!} f^{(n+1)}(\xi(x))
+\] donde \(P(x)\) es un polinomio interpolante de grado menor o igual a
+\(n\).
+
+\hypertarget{acotaciuxf3n-del-error-caso-general}{%
+\subsubsection{Acotación del Error (Caso
+General)}\label{acotaciuxf3n-del-error-caso-general}}
+
+\[
+f(x) - P(x) = \frac{(x-x_0)(x-x_1) \cdots (x-x_n)}{(n+1)!} f^{(n+1)}(cx)
+= \frac{\psi_n(x)}{(n+1)!} f^{(n+1)}(cx)
+\]
+
+Para \(x_0, x_1, ..., x_n\) distintos en \([a,b]\) y \(x \in [a,b]\) la
+cota de error \(|f(x) - P_n(x)|\) está dada por: \[
+|f(x) - P_n(x)| \leq \max_{a \leq x \leq b} |f(x) - P_n(x)| \leq \frac{1}{(n+1)!}
+\max_{a \leq x \leq b} |\psi_n(x)| \max_{a \leq x \leq b} |f^{(n+1)}(x)|
+\]
+
+\hypertarget{error-para-nodos-uniformemente-espaciados}{%
+\paragraph{Error para Nodos Uniformemente
+Espaciados}\label{error-para-nodos-uniformemente-espaciados}}
+
+\[
+h = \frac{b-a}{n}\qquad\qquad x_i = a + ih
+\]
+
+Luego \(\psi_n(x) = x(x-h)(x-2h)\cdots(x-b) = \prod_{i=0}^n (x - ih)\).
+Usando nodos uniformemente espaciado, en general, el error no está
+uniformemente distribuido. Además, se tiene que el error no siempre
+tiende a cero cuando se aumenta la cantidad de puntos.
+
+\Teorema (de Aproximación de Weierstrass) sea \(f(x)\) una función
+continua en \([a,b]\) y sea \(\epsilon>0\). Luego existe un polinomio
+\(P_n(x)\) tal que
+\(\max_{a \leq x \leq b} |f(x) - P(x)| \leq \epsilon\).
+
+\hypertarget{aproximaciuxf3n-con-menor-v.a.-muxe1ximo}{%
+\subsubsection{Aproximación con Menor V.A.
+Máximo}\label{aproximaciuxf3n-con-menor-v.a.-muxe1ximo}}
+
+Dada una función \(f(x)\) continua en \([a,b]\) queremos aproximarla con
+un polinomio \(P(x)\) tal que minimice el error de aproximación
+\(E(P) = \max_{a \leq x \leq b} |f(x) - P(x)|\). Definimos el error
+\emph{minimax} como \(\zeta(f) = \min_{gr(P) \leq n} E(P)\) (esto
+requiere optimización no lineal). Luego denotamos este polinomio minimax
+como \(m_n(x)\), y se tiene \(E(m_n) = \zeta(f)\).
+
+\hypertarget{polinomio-de-chebychev}{%
+\subsubsection{Polinomio de Chebychev}\label{polinomio-de-chebychev}}
+
+Para \(n \geq 0\) definimos la función
+\(T_n(x) = cos(n \cdot cos^{-1}(x))\) para \(-1 \leq x \leq 1\). Luego,
+\(T_n\) verifica que \(T_{n+1}(x) = 2 x T_n(x) - T_{n-1}(x)\).
+
+\hypertarget{propiedades-de-t_n}{%
+\paragraph{\texorpdfstring{Propiedades de
+\(T_n\):}{Propiedades de T\_n:}}\label{propiedades-de-t_n}}
+
+\begin{itemize}
+\tightlist
+\item
+  \(|T_n(x)| \leq 1,\  -1 \leq x \leq 1\)
+\item
+  \(T_n(x) = 2^{n-1} + \text{términos de menor grado}\)
+\end{itemize}
+
+Las raíces de \(T_n\) se usan para encontrar los valores de
+\(x_0, ..., x_n\) que minimizan el error de interpolación de grado menor
+o igual a \(n-1\).
+
+\hypertarget{aproximaciuxf3n-de-muxednimos-cuadrados}{%
+\subsubsection{Aproximación de Mínimos
+Cuadrados}\label{aproximaciuxf3n-de-muxednimos-cuadrados}}
+
+Sea \(y = g(x)\) una relación desconocida entre las variables \(x\) e
+\(y\). Experimentalmente se obtienen \(\{(x_1, y_1), ..., (x_m, y_m)\}\)
+donde \(y_i = g(x_i) + v_i\) con \(v_i\) el error de medición. A partir
+de los datos queremos aproximar \(g(x)\) mediante una función \(f(x)\)
+de la forma
+\(f(x) = a_1 \varphi_1(x) + a_2 \varphi_2(x) + \cdots + a_p \varphi_p(x)\)
+donde \(a_i\) son números y \(\varphi_i\) son funciones dadas. Es decir,
+queremos hallar los valores de \(a_1,..., a_p\) que minimizan
+\(G(a_1, ..., a_p) = \sum_{j=1}^m [(a_i \varphi(x_j) + \cdots + a_p \varphi_p(x_j)) - y_j]^2\).
+El mínimo se satisface cuando
+\(\delta G / \delta a_i = 0,\  i=1,...,p\).
+
+\hypertarget{aproximaciuxf3n-polinomial-de-muxednimos-cuadrados}{%
+\paragraph{Aproximación Polinomial de Mínimos
+Cuadrados:}\label{aproximaciuxf3n-polinomial-de-muxednimos-cuadrados}}
+
+\(\varphi_i = x^{i-1}\).
+
+\hypertarget{integraciuxf3n-numuxe9rica}{%
+\section{Integración Numérica}\label{integraciuxf3n-numuxe9rica}}
+
+Dada una función \(f : [a,b] \rightarrow \ensuremath{\mathbb{R}}\) se
+quiere calcular la integral definida
+\(I(f) = \int_a^b f(x) dx = F(b) - F(a)\), donde \(F(x)\) es cualquier
+antiderivada de \(f(x)\). Una aproximación de la misma resulta
+\(\sum_{i=0}^n a_i f(x_i)\).
+
+\hypertarget{integraciuxf3n-numuxe9rica-basada-en-polinomios-interpolantes}{%
+\subsection{Integración Numérica Basada en Polinomios
+Interpolantes}\label{integraciuxf3n-numuxe9rica-basada-en-polinomios-interpolantes}}
+
+Sean \(\{x_0, ..., x_n\}\) \(n+1\) nodos distintos en \([a,b]\). Tenemos
+que: \[
+f(x) = P_n(x) + \prod_{i=0}^n (x-x_i) \frac{f^{(n+1)}(\xi(x))}{(n+1)!}
+\]
+
+Donde \(P_n(x) = \sum_{i=0}^n f(x_i) L_i(x)\). Integrando en \([a,b]\)
+tenemos: \begin{align*}
+\int_a^b f(x) dx &= \int_a^b \sum_{i=1}^n f(x_i) L_i(x) 
++ \int_a^b \prod_{i=0}^n (x-x_i) \frac{f^{(n+1)}(\xi(x))}{(n+1)!} \\
+&= \sum_{i=0}^n a_i f(x_i) 
++ \underbrace{\frac{1}{(n+1)!} 
+\int_a^b \prod_{i=0}^n (x-x_i) f^{(n+1)}(\xi(x))}_{\text{error de integración}}
+\end{align*}
+
+Donde \(\xi(x) \in [a,b]\) para todo \(x \in [a,b]\) y
+\(a_i = \int_a^b L_i(x) dx\).
+
+\Teorema (del Valor Intermedio Ponderado para Integrales) si
+\(f \in [a,b]\), y \(g\) es integrable en \([a,b]\) y no cambia de signo
+en \([a,b]\), entonces existe un número \(c \in (a,b)\) tal que
+\(\int_a^b f(x)g(x) dx = f(c) \int_a^b g(x) dx\).
+
+\hypertarget{regla-del-trapecio}{%
+\subsubsection{Regla del Trapecio}\label{regla-del-trapecio}}
+
+Aproximamos \(f(x)\) mediante un polinomio lineal. Sean \(x_0 = a\),
+\(x_1 = b\) y \(h = b-a\). Por Lagrange tenemos que
+\(P_1(x) = \frac{x-x_1}{x_0 - x_1} f(x_0) + \frac{x-x_0}{x_1 - x_0} f(x_1)\).
+Luego: \[
+\int_a^b f(x) dx = \int_{x_0}^{x_1} 
+\left[ \frac{(x - x_1)}{(x_0 - x_1)} f(x_0) + \frac{(x - x_0)}{(x_1 - x_0)} f(x_1)
+\right] dx 
++ \frac{1}{2} \int_{x_0}^{x_1} f''(\xi(x)) (x-x_0)(x-x_1) dx
+\]
+
+Donde: \begin{align*}
+\int_{x_0}^{x_1} 
+\left[ \frac{(x - x_1)}{(x_0 - x_1)} f(x_0) + \frac{(x - x_0)}{(x_1 - x_0)} f(x_1)
+\right] dx 
+&= \left[ \frac{(x-x_1)^2}{2(x_0 - x_1)} f(x_0) 
++ \frac{(x-x_0)^2}{2(x_1 - x_0)} f(x_1) \right]_{x_0}^{x_1} \\
+&= \frac{(x_1 - x_0)}{2} (f(x_0) + f(x_1)) = \frac{h}{2} (f(x_0) + f(x_1))
+\end{align*}
+
+Además, como \((x-x_0)(x-x_1)\) no cambia de signo en \([x_0,x_1]\),
+luego podemos aplicar el teorema anterior para obtener: \begin{align*}
+\frac{1}{2} \int_{x_0}^{x_1} f''(\xi(x)) (x-x_0)(x-x_1) dx
+&= \frac{1}{2} f''(c) \int_{x_0}^{x_1} (x-x_0)(x-x_1) dx \quad
+\text{p.a. } c \in [x_0, x_1] \\
+&= \frac{1}{2} f''(c) \left[\frac{x^3}{3} 
+- \frac{(x_1-x_0)}{2}x^2+x_0 x_1 \right]_{x_0}^{x_1} \\
+&= f''(c) \left[ 
+\left(\frac{x_1^3}{3}-\frac{x_1^3}{2}-\frac{x_0 x_1^2}{2} + x_0 x_1^2 \right) 
+- \left( \frac{x_0^3}{3}-\frac{x_1 x_0^2}{2}-\frac{x_0^3}{2} + x_0^2 x_1 \right)
+\right] \\
+&= \frac{1}{2} f''(c) \left[ \left( - \frac{x_1^3}{6} + \frac{x_0 x_1^2}{2} \right) 
+- \left( - \frac{x_0^3}{6} + \frac{x_0^2 x_1}{2} \right) \right] \\
+&= \frac{f''(c)}{12} \left[ x_1^3 - 3 x_0 x_1^2  + 3 x_0^2 x_1 - x_0^3 \right] \\
+&= - \frac{f''(c)}{12} (x_1 - x_0)^3 = -\frac{h^3}{12} f''(c)
+\end{align*}
+
+Finalmente, la regla del trapecio queda dada por: \[
+\int_a^b f(x) dx = 
+\underbrace{\frac{h}{2} [f(x_0) + f(x_1)]}_{\text{integral aproximada}} 
+\  \underbrace{- \frac{h^3}{12} f''(c)}_{\text{error de aproximación}}
+\]
+
+\hypertarget{muxe9todo-compuesto-del-trapecio}{%
+\subsubsection{Método Compuesto del
+Trapecio}\label{muxe9todo-compuesto-del-trapecio}}
+
+Utiliza varios subintervalos de igual longitud. Sea \(n\) el número de
+subintervalos, luego \(h = (b-a)/n\) y \(x_j = a + jh\). Tenemos que la
+aproximación por \(n\) trapecios \(T_n\) resulta: \begin{align*}
+T_n(f) 
+&= h \left( \frac{f(x_0) + f(x_1)}{2} \right) 
++ h \left( \frac{f(x_1) + f(x_2)}{2} \right)
++ \cdots
++ h \left( \frac{f(x_{n-1}) + f(x_n)}{2} \right) \\
+&= h \left[\frac{1}{2}f(x_0) + f(x_1)+\cdots+f(x_{n-1}) + \frac{1}{2}f(x_n)\right]
+\end{align*}
+
+\Teorema (Error de la Integración Trapezoidal) sea
+\(f : \ensuremath{\mathbb{R}}\rightarrow \ensuremath{\mathbb{R}}\),
+derivable 2 veces en \([a,b]\), luego el error de integración usando
+\(n\) subintervalos resulta: \[
+E_n^T(f) = \int_a^b f(x) dx - T_n (f) = - \frac{h^2(b-a)}{12} f''(cn)\ 
+\text{p.a. } cn \in [a,b]
+\]
+
+\Demostracion 
+
+\begin{itemize}
+\item
+  Si \(n = 1\) \implica \(a = x_0\), \(b = x_1\) y \(h = b-a\). Luego
+  \(E_1^T(f) = - \frac{h^3}{12} f''(c)\).
+\item
+  Si \(n > 1\) \implica \(h = (b-a) / n\), \(x_j = a + jh\). Luego
+  \(E_n^T(f) = - \frac{h^3}{12} f''(\gamma_1) - \frac{h^3}{12} f''(\gamma_2) - \cdots - \frac{h^3}{12} f''(\gamma_n)\),
+  donde \(x_{j-1} \leq \gamma_j \leq x_j\). Reagrupando y multiplicando
+  por \(\frac{n}{n}\) obtenemos: \[
+  E_n^T(f) = - \frac{h^3}{12} n \left[ \frac{f''(\gamma_1) + \cdots +
+  f''(\gamma_n)}{n} \right]
+  \]
+\end{itemize}
+
+Si llamamos \(\xi_n = (f''(\gamma_1) + \cdots + f''(\gamma_n))/n\) luego
+se cumple que
+\(min_{a \leq x \leq b} f''(x) \leq \xi_n \leq max_{a \leq x \leq b} f''(x)\).
+Por hipótesis, \(f''(x)\) es continua en \([a,b]\), luego existe
+\(cn \in [a,b]\) tal que \(f''(cn) = \xi_n\). Como además \(hn = b - a\)
+tenemos que \(E_n^T(f) = - \frac{h^2(b - a)}{12} f''(cn)\).
+
+\hypertarget{estimaciuxf3n-del-error-trapezoidal}{%
+\paragraph{Estimación del Error
+Trapezoidal:}\label{estimaciuxf3n-del-error-trapezoidal}}
+
+Sabemos que
+\(E_n^T(f) = - \frac{h^2}{12} \left[f''(\gamma_1)h + \cdots + f''(\gamma_n)h \right]\),
+donde \([f''(\gamma_1)h + \cdots + f''(\gamma_n)h]\) es una aproximación
+de \(\int_a^b f''(x) dx = f'(b) - f'(a)\). Luego \[
+E_n^T(f) \approx -\frac{h^2}{12}[f'(b) - f'(a)]
+\]
+
+\hypertarget{regla-de-simpson}{%
+\subsubsection{Regla de Simpson}\label{regla-de-simpson}}
+
+Aproximamos \(f(x)\) mediante el polinomio de interpolación de Lagrange
+de grado 2 con los nodos \(x_0 = a\), \(x_1 = a + h\) y \(x_2 = b\),
+donde \(h = (b-a)/2\). Luego resulta: \begin{align*}
+\int_a^b f(x) dx 
+&= \int_{x_0}^{x_2} \underbrace{\left[
+\frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0 - x_2)} f(x_0) 
++ \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1 - x_2)} f(x_1) 
++ \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2 - x_0)} f(x_2)
+\right]}_{P_2(x)}  dx \\ 
+&+ \int_{x_0}^{x_2} \underbrace{\frac{(x-x_0)(x-x_1)(x-x_2)}{6} 
+f^{(3)}(\xi(x))}_{\text{aproximación del error}} dx
+\end{align*}
+
+Luego, resulta de operar algebraicamente que: \begin{align*}
+&\int_{x_0}^{x_2} P_2(x) dx = \frac{h}{3} [f(x_0) + 4 f(x_1) + f(x_2)] \\
+&\int_{x_0}^{x_2} \frac{(x-x_0)(x-x_1)(x-x_2)}{6} f^{(3)}(\xi(x)) dx 
+= - \frac{h^5}{90} f^{(4)}(\xi)\ \text{p.a. }\xi \in [x_0,x_2]
+\end{align*}
+ Y resulta: \[
+\int_a^b f(x) dx = \frac{h}{3} [f(x_0) + 4 f(x_1) + f(x_2)] 
+- \frac{h^5}{90} f^{(4)}(\xi)\  \text{p.a. }\xi \in [x_0,x_2]
+\]
+
+\hypertarget{muxe9todo-compuesto-de-simpson}{%
+\subsubsection{Método Compuesto de
+Simpson}\label{muxe9todo-compuesto-de-simpson}}
+
+Utiliza varios subintervalos de igual longitud. Sea \(n\) el número de
+subintervalos, luego \(h = (b-a)/n\) y \(x_j = a + jh\). Tenemos que la
+aproximación \(S_n\) resulta: \begin{align*}
+\int_a^b f(x) dx &= \int_{x_0}^{x_2} f(x) dx +\cdots +\int_{x_{n-2}}^{x_n} f(x) dx\\
+&= \frac{h}{3}[f(x_0) + 4f(x_1) + f(x_2)]
++ \frac{h}{3}[f(x_2) + 4f(x_3) + f(x_4)]
++ \cdots 
++ \frac{h}{3}[f(x_{n-2}) + 4f(x_{n-1}) + f(x_n)] \\
+&= \frac{h}{3} [f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) 
++ \cdots 
++ 2f(x_{n-2}) + 4 f(x_{n-1}) + f(x_n)]
+\end{align*}
+
+\Teorema (Error de la Integración Compuesta de Simpson) sea
+\(f : \ensuremath{\mathbb{R}}\rightarrow \ensuremath{\mathbb{R}}\),
+derivable 4 veces en \([a,b]\), luego el error de integración usando
+\(n \in \mathbb{P^+}\) subintervalos resulta: \[
+E_n^S(f) = \int_a^b f(x) dx - S_n (f) = - \frac{h^4(b-a)}{180} f^{(4)}(cn)\ 
+\text{p.a. } cn \in [a,b]
+\]
+
+\Demostracion Sabemos que
+\(E_n^S(f) = - \frac{h^5}{90} f^{(4)}(\gamma_1) - \frac{h^5}{90} f^{(4)}(\gamma_2) - \cdots - \frac{h^5}{90} f^{(4)}(\gamma_n)\),
+donde \(x_{j-1} \leq \gamma_j \leq x_j\). Reagrupando y multiplicando
+por \(\frac{(n/2)}{(n/2)}\) obtenemos: \[
+E_n^S(f) = - \frac{h^5}{90} \left(\frac{n}{2}
+\right) \left[ \frac{f^{(4)}(\gamma_1) + \cdots + f^{(4)}(\gamma_n)}{(n/2)}
+\right]
+\]
+
+Si llamamos
+\(\xi_n = (f^{(4)}(\gamma_1) + \cdots + f^{(4)}(\gamma_n))/(n/2)\) luego
+se cumple que
+\(min_{a \leq x \leq b} f^{(4)}(x) \leq \xi_n \leq max_{a \leq x \leq b} f^{(4)}(x)\).
+Por hipótesis, \(f^{(4)}(x)\) es continua en \([a,b]\), luego existe
+\(cn \in [a,b]\) tal que \(f^{(4)}(cn) = \xi_n\). Como además
+\(hn = b - a\) tenemos que
+\(E_n^S(f) = - \frac{h^4(b - a)}{180} f^{(4)}(cn)\).
+
+\hypertarget{estimaciuxf3n-del-error-de-simpson}{%
+\paragraph{Estimación del Error de
+Simpson:}\label{estimaciuxf3n-del-error-de-simpson}}
+
+Sabemos que
+\(E_n^S(f) = - \frac{h^4}{90} \frac{1}{2} [2nf^{(4)}(\gamma_1) + \cdots + 2nf^{(4)}(\gamma_n)]\),
+donde \([2nf^{(4)}(\gamma_1) + \cdots + 2nf^{(4)}(\gamma_n)]\) es una
+aproximación de \(\int_a^b f^{(4)}(x) dx = f^{(3)}(b) - f^{(3)}(a)\).
+Luego \[ E_n^S(f) \approx
+-\frac{h^4}{180}[f^{(3)}(b) - f^{(3)}(a)]\]
+
+\hypertarget{integraciuxf3n-numuxe9rica-en-dominio-bidimensional}{%
+\subsubsection{Integración Numérica en Dominio
+Bidimensional}\label{integraciuxf3n-numuxe9rica-en-dominio-bidimensional}}
+
+Sea desea calcular la integral de una función \(f(x, y)\) en un dominio
+bidimensional
+\(Q = \{(x, y)\in \ensuremath{\mathbb{R}}^2\  |\  a \leq x \leq b, c(x) \leq y \leq d(x)\}\).
+Es decir: \[
+I = \int_a^b \int_{c(x)}^{d(x)} f(x, y) dy dx
+\]
+
+Para esto, definimos \(G(x) = \int_{c(x)}^{d(x)} f(x, y) dy\), luego
+\(I = \int_a^b G(x) dx\), lo cual puede aproximarse como
+\(I \approx \sum_{i=1}^n \omega_i G(x_i)\), donde \(\omega_i\) es el
+\emph{factor de ponderamiento} del método utilizado, y \(x_i\) son los
+nodos equidistantes en \(x\). Por otra parte tenemos que
+\(G(x_i) \approx \sum_{j=1}^m a_{ij} f(x_i, y_j)\).
+
+\hypertarget{cota-del-error}{%
+\paragraph{Cota del Error:}\label{cota-del-error}}
+
+\[ 
+|E_n^S| \leq \frac{h x^4 (b-a) hy^4(d-c)}{180^2} 
+\cdot \max_{(x,y)\in Q} \left| \frac{\delta^4f}{\delta x^4} \right| 
+\cdot \max_{(x,y)\in Q} \left| \frac{\delta^4f}{\delta y^4} \right| 
+\]

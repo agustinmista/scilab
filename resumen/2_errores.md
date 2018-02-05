@@ -130,8 +130,8 @@ $$
 \_
 
 Usando redondeo el mayor error posible es la mitad que usando truncamiento.
-Tiene en promedio la mitad de las veces y la mitad el otro, por lo que *reduce
-la propagación de errores*.
+Tiene en promedio la mitad de las veces un signo y la mitad el otro, por lo que
+*reduce la propagación de errores*.
 
 Error Absoluto y Relativo
 -------------------------

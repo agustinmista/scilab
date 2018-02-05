@@ -1,7 +1,7 @@
 ---
 title: Métodos Numéricos
 author: Agustín Mista
-date: 23 de Enero de 2018
+date: 5 de Febrero de 2018
 geometry: margin=3cm
 lang: es
 header-includes:

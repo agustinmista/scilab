@@ -15,6 +15,8 @@ function easy_plot(f, a, b)
   disp("Min : "+string(min(y)));
   disp("Max : "+string(max(y)));
   plot(x, f);
+  xgrid(1);
+  
 endfunction
 
 //-----------------------------------------------------------------------------

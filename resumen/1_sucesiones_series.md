@@ -107,11 +107,11 @@ cambio, si $\limtoinf{n}{a_n} \neq 0$ entonces \serie{a_n} es divergente.
 
 \Demostracion suponemos que la serie \serie{a_n} converge a $s$, luego: 
 $$ 
-a_k = S_k - S_{k-1} \Rightarrow \limtoinf{n}{S_k} - \limtoinf{n}{S_{k-1}}
+a_k = S_k - S_{k-1} \Rightarrow \limtoinf{k}{S_k} - \limtoinf{k}{S_{k-1}}
 = s - s = 0
 $$
 
-\Ejemplo Serie geométrica $\serieidx{0}{r^n} = \serie{r^{n-1}}$.
+\Ejemplo Serie geométrica $\seriefrom{n=0}{r^n} = \serie{r^{n-1}}$.
 
 + Si $|r| \geq 1$ entonces $\limtoinf{n}{r^n} \neq 0 \Rightarrow$ la serie
   diverge.
@@ -135,20 +135,21 @@ $|r| < 1$.
 ### Propiedad de Linearidad
 
 \Teorema sean \serie{a_n} y \serie{b_n} series convergentes con sumas $a$ y $b$
-respectivamente. Si $\alpha$ y $\beta$ son constantes entonces \serie{\alpha
-a_n + \beta b_n} es convergente con suma $\alpha a + \beta b$.
+respectivamente. Si $\alpha$ y $\beta$ son constantes entonces \serie{(\alpha
+a_n + \beta b_n)} es convergente con suma $\alpha a + \beta b$.
 
-\Corolario si \serie{a_n} converge y \serie{b_n} diverge entonces \serie{a_n +
-b_n} diverge.
+\Corolario si \serie{a_n} converge y \serie{b_n} diverge entonces \serie{(a_n +
+b_n)} diverge.
 
-\Demostracion si \serie{a_n + b_n} fuera convergente, entonces también lo sería
-\serie{b_n} ya que $\serie{b_n} = \serie{a_n + b_n} + \serie{(-a_n)}$.
+\Demostracion si \serie{(a_n + b_n)} fuera convergente, entonces también lo
+sería \serie{b_n} ya que $\serie{b_n} = \serie{(a_n + b_n)} + \serie{(-a_n)}$.
 
 ### Propiedad Telescópica
 
 \Definicion una serie \serie{a_n} es _telescópica_ cuando se puede escribir como
-\serie{b_n - b_{n+1}} para alguna sucesión $b_n$ tal que $a_n = b_n - b_{n+1}$.
-Luego tenemos que $\seriefromto{k=1}{n}{b_k - b_{k+1}} = b_1 - b_{n+1}$.
+\serie{(b_n - b_{n+1})} para alguna sucesión $b_n$ tal que $a_n = b_n -
+b_{n+1}$. Luego tenemos que $\seriefromto{k=1}{n}{(b_k - b_{k+1})} = b_1 -
+b_{n+1}$.
 
 \Teorema sean $a_n$ y $b_n$ sucesiones tales que $a_n = b_n - b_{n+1}$. Luego
 \serie{a_n} converge \sii la **sucesión** $b_n$ converge. En cuyo caso
@@ -171,7 +172,7 @@ $\serie{a_n} = b_1 - \limtoinf{n}{b_n}$.
   converge.
 
 + **Criterio de la Raíz:** sea $a_n$ una sucesión tal que $a_n > 0$ y sea
-  $\alpha = \limtoinf{n}{\sqrt[n]{a_n}}, entonces:
+  $\alpha = \limtoinf{n}{\sqrt[n]{a_n}}$, entonces:
   * $\alpha < 1$ \implica \serie{a_n} converge. 
   * $\alpha > 1$ \implica \serie{a_n} diverge. 
   * $\alpha = 1$ \implica el criterio no decide. 

@@ -26,7 +26,7 @@ satisfacen:
 3. Para cada vector $x = [x_1, x_2, ..., x_n]^T$ existe un único vector $c =
    [c_1, c_2, ..., c_n]$ tal que $x = c_1 v^{(1)} + \cdots + c_n v^{(n)}$. Las
    constantes están dadas por $c_i = \sum_{j=1}^n x_j v_j^{(i)} = x^T v^{(i)}$
-   donde $lona(v^{(i)}) = 1$.
+   donde $long(v^{(i)}) = 1$.
 4. Definir la matriz $U = [v^{(1)}\ v^{(2)}\ \cdots v^{(n)}]$. Luego $U^T A U =
    D$ matriz diagonal con $D_{ii} = \lambda_i$. Además $U U^T = U^T U = I$, y $A
    = U D U^T$.
@@ -48,6 +48,8 @@ Sea $k$ la componente de $v$ tal que $|v_k| = ||v||_{\infty}$. Luego:
 A v = \lambda v 
 & \implica \sum_{j=1}^n a_{kj} v_j 
 = \lambda v_k \quad \text{(k-ésimo componente)} \\
+& \implica \sum_{j=1\ j \neq k}^n a_{kj} v_j + a_{kk} v_k 
+= \lambda v_k \\
 & \implica (\lambda - a_{kk}) v_k 
 = \sum_{j=1\ j\neq k}^n a_{kj} v_j \\
 & \implica |\lambda - a_{kk}| \cdot |v_k| \leq
@@ -55,6 +57,7 @@ A v = \lambda v
 \leq r_k ||v||_{\infty} \\
 & \implica |\lambda - a_{kk}| \leq r_k
 \end{align*}
+
 
 \_
 

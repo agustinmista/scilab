@@ -39,15 +39,16 @@ det(A)$ donde $A_i = [a_1 | \cdots | a_{i-1} | b | a_{i+1} | \cdots | a_n]$.
 ### Matriz Inversa
 
 \Definicion sea $A \in \real^{n \times n}$. Decimos que $A^{-1}$ es la _inversa
-de A_ si $AA^-1 = A^-1A = I$. Si $A^-1$ existe, es única. Luego, un sistema $Ax
-= b$ puede resolverse haciendo $x = A^{-1}b$, aunque esto es muy ineficiente.
+de A_ si $AA^{-1} = A^{-1}A = I$. Si $A^{-1}$ existe, es única. Luego, un
+sistema $Ax = b$ puede resolverse haciendo $x = A^{-1}b$, aunque esto es muy
+ineficiente.
 
 ### Eliminación de Gauss
 
 Consiste en 2 pasos: _eliminación de incógnitas_ y _sustitución regresiva_.
 
 $$
-[A^{(1)} | b^1] = 
+[A^{(1)} | b^(1)] = 
 \left[ 
 \begin{array}{c c c | c}
 a_{11}^{(1)} & \cdots & a_{1n}^{(1)} & b_1^{(1)} \\ 
@@ -58,7 +59,7 @@ a_{n1}^{(1)} & \cdots & a_{nn}^{(1)} & b_n^{(1)}
 \quad
 \stackrel{\text{reduce en (n-1) pasos a}}{\longrightarrow}
 \quad
-[A^{(n)} | b^n] = 
+[A^{(n)} | b^(n)] = 
 \left[ 
 \begin{array}{c c c | c}
 a_{11}^{(1)} & \cdots & a_{1n}^{(1)} & b_1^{(1)} \\ 
@@ -81,8 +82,6 @@ $$
 Donde $m_{ik} = a_{ik}^{(k)} / a_{kk}^{(k)}$. Se llama a $a_{kk}$ el _elemento
 pivote_.
 
-\_ 
-
 Una vez obtenida la matriz triangular superior $A^{(n)} = U$ resolvemos por
 sustitución regresiva.
 \begin{align*}
@@ -93,8 +92,8 @@ x_i &= \frac{1}{a_{ii}^{(i)}}
 
 ### Pivoteo
 
-Si $a_{kk}^{(k)} = 0$, se debe examinar los elementos $a_{ik}^{(k)} en las filas
-$E_i^{(k)}$ con $i = k+1, ..., n$. Siendo $A$ no singular, al menos uno de
+Si $a_{kk}^{(k)} = 0$, se debe examinar los elementos $a_{ik}^{(k)}$ en las
+filas $E_i^{(k)}$ con $i = k+1, ..., n$. Siendo $A$ no singular, al menos uno de
 dichos elementos es no nulo. Luego esta fila puede intercambiarse con
 $E_k^{(k)}$.
 
@@ -174,7 +173,7 @@ $A$ puede factorizarse en $A = LU$ y dicha factorización es única.
 \Definicion una matriz $A \in \real^{n \times n}$ es _estrictamente diagonal
 dominante_ si
 $$
-|a_{ii}| > \sum_{j=1\\ j\neq i}^n |a_{ij}|, \quad \forall i \in 1..n
+|a_{ii}| > \sum_{j=1\ j\neq i}^n  |a_{ij}|, \quad \forall i \in 1..n
 $$
 
 \Teorema una matriz $A$ diagonal dominante es no singular. Luego, el sistema
@@ -196,7 +195,7 @@ equivalentes y sirven como definición de matriz _definida positiva_.
 + Todos los autovalores de $A$ son positivos.
 + $A = B^T B$ para alguna matriz $B$ no singular. $B$ no es única pero existe
   una única matriz triangular superior $R$ con elementos diagonales positivos
-  tal que $A = R^T T$ (factorización de Cholesky).
+  tal que $A = R^T R$ (factorización de Cholesky).
 
 ### Matrices No Simétricas Reales
 
@@ -219,7 +218,7 @@ Sea $\beta = \{x_1, x_2, ..., x_n\}$ una base arbitraria, no necesariamente
 ortogonal de un espacio $n$-dimensional $S$. El objetivo es _construir una base
 ortonormal_ $O = \{u_1, u_2, ..., u_n\}$ de $S$. La estrategia consta de
 construir $O$ secuencialmente de manera que $O_k = \{u_1, u_2, ..., u_k\}$ es
-una base ortonormal de $S_k = span\{x_1, x_2, ..., x_k\}$ para $k = 1..n$.
+una base ortonormal de $S_k = span\{x_1, x_2, ..., x_k\}$ para $k = 1,...,n$.
 
 #### Algoritmo:
 $$
@@ -254,17 +253,17 @@ $$
 
 Donde:
 
-+ $A \in \real{m \times n}$ es una matriz de columnas LI. 
-+ $Q \in \real{m \times n}$ es una base ortonormal de $span\{A\}$. 
-+ $R \in \real{n \times n}$ es una matriz triangular superior con elementos
++ $A \in \real^{m \times n}$ es una matriz de columnas LI. 
++ $Q \in \real^{m \times n}$ es una base ortonormal de $span\{A\}$. 
++ $R \in \real^{n \times n}$ es una matriz triangular superior con elementos
   diagonales positivos.
 
 \_ 
 
-Toda matriz $A \in \real{m \times n}$ con columnas LI puede factorizarse de
-manera única como $A = QR$. Además, si $A \in \real{n \times n}$ es no singular,
-entonces $Q^T = Q^{-1}$. Luego $Ax = b \sii QRx = b \sii Rx = Q^T b$, y este
-último es un sistema que se resuelve por sustitución regresiva.
+Toda matriz $A \in \real^{m \times n}$ _con columnas LI_ puede factorizarse de
+manera única como $A = QR$. Además, si $A \in \real^{n \times n}$ es no
+singular, entonces $Q^T = Q^{-1}$. Luego $Ax = b \sii QRx = b \sii Rx = Q^T b$,
+y este último es un sistema que se resuelve por sustitución regresiva.
 
 ### Problema de Mínimos Cuadrados
 
@@ -280,8 +279,8 @@ $\beta$ que minimicen el error al cuadrado $\sum_{i=1}^m \epsilon_i^2 =
 #### Problema de mínimos cuadrados general:
 para $A \in \real^{m \times n}$ y $\b \in \real^m$, sea $\epsilon = \epsilon(x)
 = A x - b$. El problema de los mínimos cuadrados es el de hallar un vector $x$
-que minimice $\sum_{i=1}^m \epsilon^2 - \epsilon^T \epsilon = (Ax - b)T (Ax -
-b).
+que minimice $\sum_{i=1}^m \epsilon^2 = \sum_{i=1}^m \epsilon \epsilon^T = (Ax -
+b)^T (Ax - b)$.
 
 \Teorema el conjunto solución del problema de mínimos cuadrados es el conjunto
 de soluciones del sistema $A^T Ax = A^T b$. Además, existe una única solución
@@ -355,19 +354,15 @@ $$
 
 \Demostracion tenemos que $A x - A \tilde{x} = b - \tilde{b}$, y como $A$ es no
 singular obtenemos $x - \tilde{x} = A^{-1} (b - \tilde{b})$. Luego, usando la
-propiedad anterior obtenemos $||x - \tilde{x}|| = ||A^{-1}|| \cdot ||b -
+propiedad anterior obtenemos $||x - \tilde{x}|| \leq ||A^{-1}|| \cdot ||b -
 \tilde{b}||$. Dividimos cada lado por $||x||$ obteniendo $||x - \tilde{x}|| / ||
-x|| = ||A^{-1}|| \cdot ||b - \tilde{b}|| / ||x||$. Luego $||x - \tilde{x}|| / ||
-x|| = ||A|| \cdot ||A^{-1}|| \cdot ||b - \tilde{b}|| / (||A|| \cdot ||x||)$ y
+x|| \leq ||A^{-1}|| \cdot ||b - \tilde{b}||/||x||$. Luego $||x - \tilde{x}||/||
+x|| \leq ||A|| \cdot ||A^{-1}|| \cdot ||b - \tilde{b}|| / (||A|| \cdot ||x||)$ y
 como $||b|| = ||Ax|| \leq ||A|| \cdot ||x||$ llegamos al resultado buscado.
 
 #### Nota: 
-El número $||A|| \cdot ||A^{-1}|| se conoce como el _número de condición_ de $A$
-($K(A)$).
-
-\_ 
-
-De lo anterior se desprende que 
+El número $||A||\cdot||A^{-1}||$ se conoce como el _número de condición_ de $A$
+($K(A)$), y de lo anterior se desprende que:
 $$
 \frac{||\Delta x||}{||x + \Delta x||} \leq K(A) \frac{||\Delta A||}{||A||}
 $$
@@ -401,9 +396,9 @@ Si $A = L + D + U$, luego:
 + El _método de Gauss-Seidel_ utiliza $N = L + D$.
 
 #### Error de aproximación:
-$e^{(k)} = x - x^{(k)}$ y restando $x = I - N^{-1} A) x + N^{-1} b$ y $x^{(k+1)}
-= I - N^{-1} A) x^{(k)} + N^{-1} b$ obtenemos $e^{(k+1)} = (I - N^{-1} A)
-e^{(k)}$.
+$e^{(k)} = x - x^{(k)}$ y restando $x = (I - N^{-1} A) x + N^{-1} b$ y
+$x^{(k+1)} = I - N^{-1} A) x^{(k)} + N^{-1} b$ obtenemos $e^{(k+1)} = (I -
+N^{-1} A) e^{(k)}$.
 
 \Teorema si $||I - N^{-1} A|| < 1$ entonces la sucesión $\{x^{(k)}\}$ converge a
 la solución del sistema $Ax = b$ para cualquier estimación inicial $x^{(0)}$.
@@ -431,7 +426,7 @@ $x^{(0)}$ \sii $\rho(B) < 1$, donde $\rho(B)$ es el _radio espectral_ de $B$
 
 \Corolario la fórmula de iteración $N x^{(k+1)} = (N-A)x^{(k)} + b$ dará lugar a
 una sucesión que converge a la solución del sistema $Ax = b$ para cualquier
-$x^{(0)}$ \sii $rho(I - N^{-1} A) < 1$.
+$x^{(0)}$ \sii $\rho(I - N^{-1} A) < 1$.
 
 \Teorema si la matriz $A$ es diagonal dominante, luego la sucesión $\{x^{(k)}\}$
 generada por el método de Jacobi converge a la solución del sistema $Ax = b$
@@ -477,7 +472,7 @@ $$
 $$
 
 Luego, si existe $(D + \omega L)^{-1}$, entonces $x^{(k+1)} = T_{\omega}
-x^{(k)} + C_{\omega}, donde $T_{\omega} = (D + \omega L)^{-1}[(1 - \omega)D -
+x^{(k)} + C_{\omega}$, donde $T_{\omega} = (D + \omega L)^{-1}[(1 - \omega)D -
 \omega U]$ y $C_{\omega} = \omega (D + \omega L)^{-1} b$. Luego el error está
 dado por $e^{(k+1)} = T_{\omega} e^{(k)}$, de donde se desprende que el método
 SOR converge a la solución del $Ax = b$ para todo valor inicial \sii
@@ -491,5 +486,5 @@ $\underline{X} = [v\ |\ 0\ |\ ...\ |\ 0] \in \real^{n \times n}$. Luego $\lambda
 \underline{X} = A \underline{X}$, de donde tenemos que
 $|\lambda|\cdot||\underline{X}|| = ||\lambda \underline{X}|| = ||A
 \underline{X}|| \leq ||A|| \cdot ||\underline{X}||$. Luego $|\lambda| \leq||A||$
-para todo $\lambda \in \sigma(A)$ (espectro de $A$), por lo tanto $rho(A)\leq||
+para todo $\lambda \in \sigma(A)$ (espectro de $A$), por lo tanto $\rho(A)\leq||
 A ||$.

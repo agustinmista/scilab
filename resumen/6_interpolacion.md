@@ -65,13 +65,13 @@ Los coeficientes $a_i$ se pueden calcular introduciendo la idea de _diferencia
 dividida_. 
 
 + Diferencia dividida de primer orden: $f[x_0, x_1] = \frac{f(x_1) -
-  f(x_0)}{(x_1 - x_0} = (y_1 - y_0) / (x_1 - x_0)$
+  f(x_0)}{(x_1 - x_0)} = (y_1 - y_0) / (x_1 - x_0)$
 
 + Diferencia dividida de segundo orden: $f[x_0, x_1, x_2] = \frac{f[x_1, x_2] -
-  f[x_0, x_1]}{(x_2 - x_0}$
+  f[x_0, x_1]}{(x_2 - x_0)}$
 
 + Diferencia dividida de orden $k$: $f[x_i,...,x_{i+k}] =
-  \frac{f[x_{i+1},...,x_{i+k}] - f[x_i, x_{i+k-1}]}{(x_{i+k} - x_i}$
+  \frac{f[x_{i+1},...,x_{i+k}] - f[x_i, x_{i+k-1}]}{(x_{i+k} - x_i)}$
 
 #### Propiedad:
 sea $(i0, i1,..., in)$ una permutación de los enteros $(0, 1,...,n)$, luego se
@@ -79,8 +79,9 @@ demuestra que $f[x_{i0}, x_{i1},..., x_{in}] = f[x_0, x_1,..., x_n]$.
 
 #### Fórmula de la Interpolación por Diferencias Divididas de Newton
 $$ 
-P_n(x) = f(x_0) + (x-x_0)f[x_0, x_1] + \cdots + (x-x_0)\cdots(x-x_{n-1})f[x_0,
-..., x_n]
+P_n(x) 
+= f(x_0) + (x-x_0)f[x_0, x_1] + \cdots + (x-x_0)\cdots(x-x_{n-1})f[x_0,..., x_n]
+= \sum_{i=0}^n \left( \prod_{j=0}^{i-1} (x - x_j) \right) f[x_0, ..., x_n]
 $$
 
 \Teorema suponga que $f$ está definida en $[a,b]$ y que $\{x_0, x_1, ..., x_n\}$
@@ -117,9 +118,9 @@ f(x) - P(x) = \frac{(x-x_0)(x-x_1) \cdots (x-x_n)}{(n+1)!} f^{(n+1)}(cx)
 $$
 
 Para $x_0, x_1, ..., x_n$ distintos en $[a,b]$ y $x \in [a,b]$ la cota de error
-$|f(x) - P_n(x)| está dada por:
-$$ 
-|f(x) - P(x)| \leq \max_{a \leq x \leq b} |f(x) - P_n(x)| \leq \frac{1}{(n+1)!}
+$|f(x) - P_n(x)|$ está dada por: 
+$$
+|f(x) - P_n(x)| \leq \max_{a \leq x \leq b} |f(x) - P_n(x)| \leq \frac{1}{(n+1)!}
 \max_{a \leq x \leq b} |\psi_n(x)| \max_{a \leq x \leq b} |f^{(n+1)}(x)|
 $$
 
