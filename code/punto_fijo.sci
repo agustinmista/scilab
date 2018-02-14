@@ -11,11 +11,11 @@ function ans = punto_fijo(g, x0, eps, nMax)
     deff("y = g(x)", "y ="+g);
     xPrev = x0;
     x = g(xPrev);
+    iters = 0;
     
-    for (n = 0:nMax),
+    for (n = 0 : nMax),
         x = g(xPrev);
         xPrev = x;
-        n = n+1;
         if (abs(x - g(x)) < eps) then
             break;
         end

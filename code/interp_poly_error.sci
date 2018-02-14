@@ -70,3 +70,33 @@ function ans = interp_poly_error_puntual(x, f, val, n)
   ans = abs(e * cx);
   
 endfunction
+
+//-----------------------------------------------------------------------------
+
+// Error de la interpolación polinómica en un punto conociendo la cota de
+// la derivada.
+// Parámetros:
+//    x  -  vector columna con los valores conocidos de x
+//    val  -  punto en el que queremos una aproximación del valor de la función
+//    n  -  grado máximo del polinomio interpolante
+
+// Fórmula del error usada acá:
+//    e(val) = | f(val) - Pn(val) | 
+//           = | (val-x0)...(val-xn) | / (n+1)! 
+//           * | cota |
+
+function ans = interp_poly_error_cota(x, val, n, cota)
+  
+  if (n + 1 > length(x)) then
+    error('No hay suficientes puntos para interpolar')
+  end
+  
+  e = 1;
+  for (i = 1 : n+1),
+    e = e * (val - x(i));
+  end
+  e = abs(e) / factorial(n+1);
+
+  ans = e * abs(cota);
+  
+endfunction

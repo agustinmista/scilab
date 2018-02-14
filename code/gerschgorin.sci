@@ -38,8 +38,7 @@ function [c, r] = gerschgorin(A)
   end
 
   for (i = 1 : m),
-    disp("λ" + string(i) + " está en el intervalo [" + string(c(i)-r(i))+", " ...
-         + string(c(i) + r(i)) + "]");
+    disp("C" + string(i) + ": [" + string(c(i)-r(i))+", " + string(c(i) + r(i)) + "]");
   end
 
   ev = spec(A);

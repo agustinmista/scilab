@@ -26,16 +26,14 @@ function ans = gauss_seidel(A, b, x, eps, nMax)
   end
 
   for (it = 0 : nMax),
-    x0 = x;
+    xPrev = x;
     
     for (i = 1 : n),
       suma = ((A(i, :) * x(:)) - A(i, i) * x(i));
       x(i) = (1 / A(i, i)) * (b(i) - suma);
     end
     
-    it = it + 1;
-    
-    if (norm((x - x0), 2) <= eps) then 
+    if (norm((x - xPrev), 2) <= eps) then 
       break;
     end
   end
@@ -45,7 +43,51 @@ function ans = gauss_seidel(A, b, x, eps, nMax)
   
 endfunction
 
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+
+// Método de Gauss Seidel usando norma residuo:
+// Parámetros:
+//    A - matriz de coeficientes del sistema.
+//    b - término independiente.
+//    x - estimación inicial de la solución.
+//    eps - presición del método.
+//    nMax - cantidad máxima de iteraciones.
+
+function ans = gauss_seidel_residuo(A, b, x, eps, nMax)
+  [m, n] = size(A);
+  [bm, bn] = size(b);
+  [xm, xn] = size(x);
+
+  if (m <> n) then
+    error("ERROR: La matriz A debe ser cuadrada.");
+  end  
+  if (bm <> m | bn <> 1) then
+    error("ERROR: La dimensión de b es incorrecta.");
+  end
+  if (xm <> m | xn <> 1) then
+    error("ERROR: La dimensión de x es incorrecta.")
+  end
+
+  for (it = 0 : nMax),
+    
+    for (i = 1 : n),
+      suma = ((A(i, :) * x(:)) - A(i, i) * x(i));
+      x(i) = (1 / A(i, i)) * (b(i) - suma);
+    end
+    
+    // Uso norma residuo
+    if(norm((A * x) - b, 2) <= eps) then
+      break;
+    end
+
+  end
+  
+  disp("Cantidad de iteraciones: " + string(it));
+  ans = x;
+  
+endfunction
+
+//--------------------------------------------------------------------------
 
 // Checkea si la convergencia está garantizada para cualquier aproximación
 // inicial usando el método de Gauss-Seidel:
@@ -62,7 +104,8 @@ function ans = gauss_seidel_converge(A)
  
   // Checkeo si A es diagonal dominante
   if (diagonal_dominante(A)) then
-    disp("La matriz es diagonal dominante. El sistema converge.");
+    disp("La matriz es diagonal dominante");
+    disp("El sistema converge");
     ans = 1;
   else 
   
@@ -90,20 +133,24 @@ function ans = gauss_seidel_converge(A)
     disp ("|| I - N^-1 * A ||_inf = " + string(nrm_inf));
     
     if (nrm_1 < 1 | nrm_2 < 1 | nrm_inf < 1) then
+      disp("|| I - N^-1 * A || < 1")
       disp("El sistema converge");
       ans = 1;
     else
+      disp("|| I - N^-1 * A || >= 1")
       
       // Checkeo el radio espectral de I - N^-1 * A
       re = radio_espectral(INA);
-      disp("Radio espectral de A = " + string(re));
       if (re < 1) then
-        disp("Radio espectral de (I-N^(-1)A) = " + re + ". El sistema converge");
+        disp("Radio espectral de (I-N^(-1)A) = " + string(re) + " < 1");
+        disp("El sistema converge");
         ans = 1;
       else
+        disp("Radio espectral de (I-N^(-1)A) = " + string(re) + " >= 1");
         disp("El sistema NO converge");
         ans = 0;
       end
     end
   end
+  
 endfunction

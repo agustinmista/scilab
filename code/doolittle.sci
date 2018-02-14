@@ -1,3 +1,6 @@
+// Cargar las funciones necesarias
+exec('sustitucion.sci', -1)
+
 // Factorización LU usando el método de Doolittle
 // L es triangular inferior con 1's en la diagonal
 // U es triangular superior
@@ -27,7 +30,7 @@ function [L, U] = doolittle(A)
         L(i, j) = A(i, j);
         
         for (k = 1 : j-1)
-          L(i,j) = L(i,j)-L(i,k)*U(k,j);
+          L(i,j) = L(i,j) - L(i,k)*U(k,j);
         end
         
         L(i, j) = L(i,j) / U(j, j);
@@ -36,4 +39,17 @@ function [L, U] = doolittle(A)
     end
   end
   
+endfunction
+
+//-----------------------------------------------------------------------------
+
+// Resolución de sistemas con factorización LU de Doolittle:
+// Parámetros: 
+//    A - Matriz de coeficientes
+//    b - Vector de términos independientes
+
+function ans = doolittle_solve(A, b)
+  [L, U] = doolittle(A);
+  g = sust_adelante(L, b);
+  ans = sust_atras(U, g);
 endfunction

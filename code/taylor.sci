@@ -13,7 +13,9 @@ function ans = taylor(f, a, x, n)
     t = g(a);
     
     for(k = 1 : n),
-        t = t + (derivar(f, a, k) / factorial(k)) * (x - a)^k;
+        d = derivar(f,a,k);
+        disp(d);
+        t = t + (%e^(a) * (x - a)^k / factorial(k));
     end
     
     ans = t;
@@ -21,7 +23,7 @@ function ans = taylor(f, a, x, n)
 endfunction
 
 // Calcular el error absoluto del polinomio de Taylor
-function ans = taylor_error(f, a, x, cx, n)
+function ans = taylor_error(f, a, x, cota, n)
   deff("y = g(x)", "y = "+f);
-  ans = abs((derivar(f, cx, n+1) / factorial(n + 1)) * (x - a)^(n+1));
-endfunction 
+  ans = abs(cota) / factorial(n + 1) * (x - a)^(n+1);
+endfunction

@@ -1,13 +1,81 @@
-// Aproximación Polinomial de Mínimos Cuadrados
-// Obs.: Esta función es para el caso particular de aproximación por polinomios
-//       Para aproximar utilizando otras funciones hay que modificar las columnas
-//Parámetros:
+// Cargar las funciones necesarias
+exec('LU.sci', -1)
+
+
+// Aproximación genérica de Mínimos Cuadrados
+// Parámetros:
+//   x  -   vector columna
+//   y  -   vector columna de igual dimensión que x
+//   F  -   vector de funciones para interpolar (string)
+//   flag - plotea la funcion?
+
+function  ans = interp_min_cuad(x, y, F, flag)
+  
+  [m _] = size(x);
+  [_ p] = size(F);
+  
+  if (length(x) <> length(y)) then
+    error('Los vectores x e y deben tener las mismas dimensiones')
+  end
+  
+  for (i = 1 : p),
+    deff('y = phi'+string(i)+'(x)', 'y = '+F(i));
+  end
+  
+  A = zeros(m, p);
+  for (i = 1 : m),
+    for (j = 1 : p),
+      eq = "phi"+string(j)+"("+string(x(i))+")";
+      A(i, j) = eval(eq);
+    end
+  end
+ 
+  coeffs = LU_solve(A'*A, A'*y);
+  
+  expr = "(" + string(coeffs(1)) + ")*" + F(1);
+  for (i = 2 : p),
+    expr = expr + " + (" + string(coeffs(i)) + ")*" + F(i);
+  end
+  
+  disp("ls(x) = " + expr);
+  deff('y = ls(x)', 'y = ' + expr);
+  
+  // Error medio
+  z = ls(x);
+  err = y - z;
+  err = err^2;
+  err = sqrt(sum(err) / m);
+  disp("Error medio cuadrado: " + string(err));
+  
+  if (flag) then 
+    minx = min(x);
+    maxx = max(x);
+    
+    for (i = 1 : m),
+      plot(x(i), y(i),'.')
+    end
+    
+    fx = [minx : 0.01 : maxx];
+    plot(fx, ls);  
+  end
+
+  ans = coeffs;
+
+endfunction
+
+//--------------------------------------------------------------------------
+
+// Aproximación Polinomial de Mínimos Cuadrados 
+// Obs.: Esta función es para el caso particular de aproximación por
+// polinomios Para aproximar utilizando otras funciones hay que modificar
+// las columnas
+// Parámetros:
 //   x  -   vector columna
 //   y  -   vector columna de igual dimensión que x
 //   g  -   grado del polinomio de aproximación
 //   flag - bandera para realizar o no el gráfico
 
-function  sol = interp_min_cuadrados(x, y, n, flag)
+function  sol = interp_min_cuad_poly(x, y, n, flag)
   [xm, xn] = size(x);
   [ym, yn] = size(y);
   
@@ -48,9 +116,7 @@ function  sol = interp_min_cuadrados(x, y, n, flag)
   if (flag) then 
   
     minx = min(x);
-    miny = min(y);
     maxx = max(x);
-    maxy = max(y);
     
     for (i = 1 : xm),
       plot(x(i),y(i),'.')

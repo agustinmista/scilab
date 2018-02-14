@@ -1,3 +1,8 @@
+// Cargar las funciones necesarias
+exec('diagonal_dominante.sci', -1)
+exec('radio_espectral.sci', -1)
+
+
 // Método de Sobre-relajación:
 // Parámetros:
 //    A - matriz de coeficientes del sistema.
@@ -41,4 +46,18 @@ function ans = SOR(A, b, x, w, eps, nMax)
     disp("Cantidad de iteraciones: " + string(it));     
     ans = x;
     
+endfunction
+
+//--------------------------------------------------------------------------
+
+// Parametro de relajación óptimo de SOR para matrices tridiagonales:
+// Parámetros:
+//    A - matriz tridiagonal definida positiva de coeficientes del sistema.
+
+function ans = tridiag_best_w(A)
+  
+  [m n] = size(A);
+  Tj = eye(m, m) - inv(eye(m, m) * A(1,1)) * A;
+  ans = 2 / (1 + sqrt(1 - radio_espectral(Tj)^2));
+
 endfunction
