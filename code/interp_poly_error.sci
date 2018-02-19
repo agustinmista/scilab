@@ -73,11 +73,37 @@ endfunction
 
 //-----------------------------------------------------------------------------
 
-// Error de la interpolación polinómica en un punto conociendo la cota de
+// Error de la interpolación polinómica en un intervalo conociendo la cota de
 // la derivada.
 // Parámetros:
 //    x  -  vector columna con los valores conocidos de x
-//    val  -  punto en el que queremos una aproximación del valor de la función
+//    n  -  grado máximo del polinomio interpolante
+
+// Fórmula del error usada acá:
+//    e(val) = | f(val) - Pn(val) | 
+//           <= max_x | (x-x0)...(x-xn) | / (n+1)! * | cota |
+
+function ans = interp_poly_error_i_cota(x, n, cota)
+  
+  if (n + 1 > length(x)) then
+    error('No hay suficientes puntos para interpolar')
+  end
+  
+  phi = poly(x', "x", "roots");
+  max_phi = max(abs(horner(phi, min(x):0.01:max(x))))
+  e = max_phi / factorial(n+1);
+
+  ans = e * abs(cota);
+  
+endfunction
+
+
+//-----------------------------------------------------------------------------
+
+// Error de la interpolación polinómica puntual conociendo la cota de
+// la derivada.
+// Parámetros:
+//    x  -  vector columna con los valores conocidos de x
 //    n  -  grado máximo del polinomio interpolante
 
 // Fórmula del error usada acá:
@@ -85,7 +111,7 @@ endfunction
 //           = | (val-x0)...(val-xn) | / (n+1)! 
 //           * | cota |
 
-function ans = interp_poly_error_cota(x, val, n, cota)
+function ans = interp_poly_error_p_cota(x, val, n, cota)
   
   if (n + 1 > length(x)) then
     error('No hay suficientes puntos para interpolar')

@@ -91,18 +91,19 @@ function [aval, avec] = eigen_potencia_alt(A, z0, maxit, tol)
     // Obtengo una nueva aproximación 
     w1 = A * z0;
     z1 = w1 / norm(w1, 'inf');
-   
+    
     // Encuentro la primer componente no nula de z0
     k = 1;
     while (z0(k) == 0 & k < n),
       k = k + 1;
     end
-   
+    
     // Calculo la aproximación al autovalor actual
     lambda1 = w1(k) / z0(k);
     
     // Criterio de parada
-    if (abs(lambda1 - lambda0) <= tol) then
+    // if (abs(lambda1 - lambda0)) then
+    if (norm(A*z1 - lambda1*z1, 2) <= tol) then
       break;
     end
     
